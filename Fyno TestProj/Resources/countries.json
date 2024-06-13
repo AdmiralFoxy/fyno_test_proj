@@ -1,0 +1,977 @@
+[
+    {
+        "country": "Afghanistan",
+        "capital_coordinates": {"lat": 34.5281, "lon": 69.1723},
+        "flag_emoji": "🇦🇫"
+    },
+    {
+        "country": "Albania",
+        "capital_coordinates": {"lat": 41.3275, "lon": 19.8187},
+        "flag_emoji": "🇦🇱"
+    },
+    {
+        "country": "Algeria",
+        "capital_coordinates": {"lat": 36.7372, "lon": 3.0865},
+        "flag_emoji": "🇩🇿"
+    },
+    {
+        "country": "Andorra",
+        "capital_coordinates": {"lat": 42.5078, "lon": 1.5211},
+        "flag_emoji": "🇦🇩"
+    },
+    {
+        "country": "Angola",
+        "capital_coordinates": {"lat": -8.8383, "lon": 13.2344},
+        "flag_emoji": "🇦🇴"
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "capital_coordinates": {"lat": 17.1274, "lon": -61.8468},
+        "flag_emoji": "🇦🇬"
+    },
+    {
+        "country": "Argentina",
+        "capital_coordinates": {"lat": -34.6037, "lon": -58.3816},
+        "flag_emoji": "🇦🇷"
+    },
+    {
+        "country": "Armenia",
+        "capital_coordinates": {"lat": 40.1792, "lon": 44.4991},
+        "flag_emoji": "🇦🇲"
+    },
+    {
+        "country": "Australia",
+        "capital_coordinates": {"lat": -35.2809, "lon": 149.1300},
+        "flag_emoji": "🇦🇺"
+    },
+    {
+        "country": "Austria",
+        "capital_coordinates": {"lat": 48.2082, "lon": 16.3738},
+        "flag_emoji": "🇦🇹"
+    },
+    {
+        "country": "Azerbaijan",
+        "capital_coordinates": {"lat": 40.4093, "lon": 49.8671},
+        "flag_emoji": "🇦🇿"
+    },
+    {
+        "country": "Bahamas",
+        "capital_coordinates": {"lat": 25.0343, "lon": -77.3963},
+        "flag_emoji": "🇧🇸"
+    },
+    {
+        "country": "Bahrain",
+        "capital_coordinates": {"lat": 26.2235, "lon": 50.5876},
+        "flag_emoji": "🇧🇭"
+    },
+    {
+        "country": "Bangladesh",
+        "capital_coordinates": {"lat": 23.8103, "lon": 90.4125},
+        "flag_emoji": "🇧🇩"
+    },
+    {
+        "country": "Barbados",
+        "capital_coordinates": {"lat": 13.0975, "lon": -59.6167},
+        "flag_emoji": "🇧🇧"
+    },
+    {
+        "country": "Belarus",
+        "capital_coordinates": {"lat": 53.9045, "lon": 27.5615},
+        "flag_emoji": "🇧🇾"
+    },
+    {
+        "country": "Belgium",
+        "capital_coordinates": {"lat": 50.8503, "lon": 4.3517},
+        "flag_emoji": "🇧🇪"
+    },
+    {
+        "country": "Belize",
+        "capital_coordinates": {"lat": 17.5046, "lon": -88.1962},
+        "flag_emoji": "🇧🇿"
+    },
+    {
+        "country": "Benin",
+        "capital_coordinates": {"lat": 6.3703, "lon": 2.3912},
+        "flag_emoji": "🇧🇯"
+    },
+    {
+        "country": "Bhutan",
+        "capital_coordinates": {"lat": 27.4728, "lon": 89.6390},
+        "flag_emoji": "🇧🇹"
+    },
+    {
+        "country": "Bolivia",
+        "capital_coordinates": {"lat": -16.5000, "lon": -68.1500},
+        "flag_emoji": "🇧🇴"
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "capital_coordinates": {"lat": 43.8563, "lon": 18.4131},
+        "flag_emoji": "🇧🇦"
+    },
+    {
+        "country": "Botswana",
+        "capital_coordinates": {"lat": -24.6282, "lon": 25.9231},
+        "flag_emoji": "🇧🇼"
+    },
+    {
+        "country": "Brazil",
+        "capital_coordinates": {"lat": -15.7939, "lon": -47.8828},
+        "flag_emoji": "🇧🇷"
+    },
+    {
+        "country": "Brunei",
+        "capital_coordinates": {"lat": 4.9031, "lon": 114.9398},
+        "flag_emoji": "🇧🇳"
+    },
+    {
+        "country": "Bulgaria",
+        "capital_coordinates": {"lat": 42.6977, "lon": 23.3219},
+        "flag_emoji": "🇧🇬"
+    },
+    {
+        "country": "Burkina Faso",
+        "capital_coordinates": {"lat": 12.3714, "lon": -1.5197},
+        "flag_emoji": "🇧🇫"
+    },
+    {
+        "country": "Burundi",
+        "capital_coordinates": {"lat": -3.3731, "lon": 29.9189},
+        "flag_emoji": "🇧🇮"
+    },
+    {
+        "country": "Cabo Verde",
+        "capital_coordinates": {"lat": 14.9330, "lon": -23.5133},
+        "flag_emoji": "🇨🇻"
+    },
+    {
+        "country": "Cambodia",
+        "capital_coordinates": {"lat": 11.5564, "lon": 104.9282},
+        "flag_emoji": "🇰🇭"
+    },
+    {
+        "country": "Cameroon",
+        "capital_coordinates": {"lat": 3.8480, "lon": 11.5021},
+        "flag_emoji": "🇨🇲"
+    },
+    {
+        "country": "Canada",
+        "capital_coordinates": {"lat": 45.4215, "lon": -75.6972},
+        "flag_emoji": "🇨🇦"
+    },
+    {
+        "country": "Central African Republic",
+        "capital_coordinates": {"lat": 4.3947, "lon": 18.5582},
+        "flag_emoji": "🇨🇫"
+    },
+    {
+        "country": "Chad",
+        "capital_coordinates": {"lat": 12.1348, "lon": 15.0557},
+        "flag_emoji": "🇹🇩"
+    },
+    {
+        "country": "Chile",
+        "capital_coordinates": {"lat": -33.4489, "lon": -70.6693},
+        "flag_emoji": "🇨🇱"
+    },
+    {
+        "country": "China",
+        "capital_coordinates": {"lat": 39.9042, "lon": 116.4074},
+        "flag_emoji": "🇨🇳"
+    },
+    {
+        "country": "Colombia",
+        "capital_coordinates": {"lat": 4.7110, "lon": -74.0721},
+        "flag_emoji": "🇨🇴"
+    },
+    {
+        "country": "Comoros",
+        "capital_coordinates": {"lat": -11.7042, "lon": 43.2402},
+        "flag_emoji": "🇰🇲"
+    },
+    {
+        "country": "Congo (Congo-Brazzaville)",
+        "capital_coordinates": {"lat": -4.2678, "lon": 15.2877},
+        "flag_emoji": "🇨🇬"
+    },
+    {
+        "country": "Costa Rica",
+        "capital_coordinates": {"lat": 9.9281, "lon": -84.0907},
+        "flag_emoji": "🇨🇷"
+    },
+    {
+        "country": "Croatia",
+        "capital_coordinates": {"lat": 45.8150, "lon": 15.9819},
+        "flag_emoji": "🇭🇷"
+    },
+    {
+        "country": "Cuba",
+        "capital_coordinates": {"lat": 23.1136, "lon": -82.3666},
+        "flag_emoji": "🇨🇺"
+    },
+    {
+        "country": "Cyprus",
+        "capital_coordinates": {"lat": 35.1856, "lon": 33.3823},
+        "flag_emoji": "🇨🇾"
+    },
+    {
+        "country": "Czechia (Czech Republic)",
+        "capital_coordinates": {"lat": 50.0755, "lon": 14.4378},
+        "flag_emoji": "🇨🇿"
+    },
+    {
+        "country": "Democratic Republic of the Congo",
+        "capital_coordinates": {"lat": -4.4419, "lon": 15.2663},
+        "flag_emoji": "🇨🇩"
+    },
+    {
+        "country": "Denmark",
+        "capital_coordinates": {"lat": 55.6761, "lon": 12.5683},
+        "flag_emoji": "🇩🇰"
+    },
+    {
+        "country": "Djibouti",
+        "capital_coordinates": {"lat": 11.8251, "lon": 42.5903},
+        "flag_emoji": "🇩🇯"
+    },
+    {
+        "country": "Dominica",
+        "capital_coordinates": {"lat": 15.3092, "lon": -61.3790},
+        "flag_emoji": "🇩🇲"
+    },
+    {
+        "country": "Dominican Republic",
+        "capital_coordinates": {"lat": 18.4861, "lon": -69.9312},
+        "flag_emoji": "🇩🇴"
+    },
+    {
+        "country": "Ecuador",
+        "capital_coordinates": {"lat": -0.1807, "lon": -78.4678},
+        "flag_emoji": "🇪🇨"
+    },
+    {
+        "country": "Egypt",
+        "capital_coordinates": {"lat": 30.0444, "lon": 31.2357},
+        "flag_emoji": "🇪🇬"
+    },
+    {
+        "country": "El Salvador",
+        "capital_coordinates": {"lat": 13.6929, "lon": -89.2182},
+        "flag_emoji": "🇸🇻"
+    },
+    {
+        "country": "Equatorial Guinea",
+        "capital_coordinates": {"lat": 3.7500, "lon": 8.7833},
+        "flag_emoji": "🇬🇶"
+    },
+    {
+        "country": "Eritrea",
+        "capital_coordinates": {"lat": 15.3229, "lon": 38.9251},
+        "flag_emoji": "🇪🇷"
+    },
+    {
+        "country": "Estonia",
+        "capital_coordinates": {"lat": 59.4370, "lon": 24.7535},
+        "flag_emoji": "🇪🇪"
+    },
+    {
+        "country": "Eswatini (fmr. 'Swaziland')",
+        "capital_coordinates": {"lat": -26.5225, "lon": 31.4659},
+        "flag_emoji": "🇸🇿"
+    },
+    {
+        "country": "Ethiopia",
+        "capital_coordinates": {"lat": 9.0301, "lon": 38.7408},
+        "flag_emoji": "🇪🇹"
+    },
+    {
+        "country": "Fiji",
+        "capital_coordinates": {"lat": -18.1248, "lon": 178.4501},
+        "flag_emoji": "🇫🇯"
+    },
+    {
+        "country": "Finland",
+        "capital_coordinates": {"lat": 60.1695, "lon": 24.9355},
+        "flag_emoji": "🇫🇮"
+    },
+    {
+        "country": "France",
+        "capital_coordinates": {"lat": 48.8566, "lon": 2.3522},
+        "flag_emoji": "🇫🇷"
+    },
+    {
+        "country": "Gabon",
+        "capital_coordinates": {"lat": 0.4162, "lon": 9.4673},
+        "flag_emoji": "🇬🇦"
+    },
+    {
+        "country": "Gambia",
+        "capital_coordinates": {"lat": 13.4549, "lon": -16.5790},
+        "flag_emoji": "🇬🇲"
+    },
+    {
+        "country": "Georgia",
+        "capital_coordinates": {"lat": 41.7151, "lon": 44.8271},
+        "flag_emoji": "🇬🇪"
+    },
+    {
+        "country": "Germany",
+        "capital_coordinates": {"lat": 52.5200, "lon": 13.4050},
+        "flag_emoji": "🇩🇪"
+    },
+    {
+        "country": "Ghana",
+        "capital_coordinates": {"lat": 5.6037, "lon": -0.1870},
+        "flag_emoji": "🇬🇭"
+    },
+    {
+        "country": "Greece",
+        "capital_coordinates": {"lat": 37.9838, "lon": 23.7275},
+        "flag_emoji": "🇬🇷"
+    },
+    {
+        "country": "Grenada",
+        "capital_coordinates": {"lat": 12.0561, "lon": -61.7486},
+        "flag_emoji": "🇬🇩"
+    },
+    {
+        "country": "Guatemala",
+        "capital_coordinates": {"lat": 14.6349, "lon": -90.5069},
+        "flag_emoji": "🇬🇹"
+    },
+    {
+        "country": "Guinea",
+        "capital_coordinates": {"lat": 9.6412, "lon": -13.5784},
+        "flag_emoji": "🇬🇳"
+    },
+    {
+        "country": "Guinea-Bissau",
+        "capital_coordinates": {"lat": 11.8636, "lon": -15.5977},
+        "flag_emoji": "🇬🇼"
+    },
+    {
+        "country": "Guyana",
+        "capital_coordinates": {"lat": 6.8013, "lon": -58.1551},
+        "flag_emoji": "🇬🇾"
+    },
+    {
+        "country": "Haiti",
+        "capital_coordinates": {"lat": 18.5944, "lon": -72.3074},
+        "flag_emoji": "🇭🇹"
+    },
+    {
+        "country": "Honduras",
+        "capital_coordinates": {"lat": 14.0723, "lon": -87.1921},
+        "flag_emoji": "🇭🇳"
+    },
+    {
+        "country": "Hungary",
+        "capital_coordinates": {"lat": 47.4979, "lon": 19.0402},
+        "flag_emoji": "🇭🇺"
+    },
+    {
+        "country": "Iceland",
+        "capital_coordinates": {"lat": 64.1355, "lon": -21.8954},
+        "flag_emoji": "🇮🇸"
+    },
+    {
+        "country": "India",
+        "capital_coordinates": {"lat": 28.6139, "lon": 77.2090},
+        "flag_emoji": "🇮🇳"
+    },
+    {
+        "country": "Indonesia",
+        "capital_coordinates": {"lat": -6.2088, "lon": 106.8456},
+        "flag_emoji": "🇮🇩"
+    },
+    {
+        "country": "Iran",
+        "capital_coordinates": {"lat": 35.6892, "lon": 51.3890},
+        "flag_emoji": "🇮🇷"
+    },
+    {
+        "country": "Iraq",
+        "capital_coordinates": {"lat": 33.3152, "lon": 44.3661},
+        "flag_emoji": "🇮🇶"
+    },
+    {
+        "country": "Ireland",
+        "capital_coordinates": {"lat": 53.3498, "lon": -6.2603},
+        "flag_emoji": "🇮🇪"
+    },
+    {
+        "country": "Israel",
+        "capital_coordinates": {"lat": 31.7683, "lon": 35.2137},
+        "flag_emoji": "🇮🇱"
+    },
+    {
+        "country": "Italy",
+        "capital_coordinates": {"lat": 41.9028, "lon": 12.4964},
+        "flag_emoji": "🇮🇹"
+    },
+    {
+        "country": "Jamaica",
+        "capital_coordinates": {"lat": 18.0179, "lon": -76.8099},
+        "flag_emoji": "🇯🇲"
+    },
+    {
+        "country": "Japan",
+        "capital_coordinates": {"lat": 35.6895, "lon": 139.6917},
+        "flag_emoji": "🇯🇵"
+    },
+    {
+        "country": "Jordan",
+        "capital_coordinates": {"lat": 31.9539, "lon": 35.9106},
+        "flag_emoji": "🇯🇴"
+    },
+    {
+        "country": "Kazakhstan",
+        "capital_coordinates": {"lat": 51.1694, "lon": 71.4491},
+        "flag_emoji": "🇰🇿"
+    },
+    {
+        "country": "Kenya",
+        "capital_coordinates": {"lat": -1.2864, "lon": 36.8172},
+        "flag_emoji": "🇰🇪"
+    },
+    {
+        "country": "Kiribati",
+        "capital_coordinates": {"lat": 1.3292, "lon": 172.9780},
+        "flag_emoji": "🇰🇮"
+    },
+    {
+        "country": "Kuwait",
+        "capital_coordinates": {"lat": 29.3759, "lon": 47.9774},
+        "flag_emoji": "🇰🇼"
+    },
+    {
+        "country": "Kyrgyzstan",
+        "capital_coordinates": {"lat": 42.8746, "lon": 74.5698},
+        "flag_emoji": "🇰🇬"
+    },
+    {
+        "country": "Laos",
+        "capital_coordinates": {"lat": 17.9757, "lon": 102.6331},
+        "flag_emoji": "🇱🇦"
+    },
+    {
+        "country": "Latvia",
+        "capital_coordinates": {"lat": 56.9496, "lon": 24.1052},
+        "flag_emoji": "🇱🇻"
+    },
+    {
+        "country": "Lebanon",
+        "capital_coordinates": {"lat": 33.8886, "lon": 35.4955},
+        "flag_emoji": "🇱🇧"
+    },
+    {
+        "country": "Lesotho",
+        "capital_coordinates": {"lat": -29.3152, "lon": 27.4869},
+        "flag_emoji": "🇱🇸"
+    },
+    {
+        "country": "Liberia",
+        "capital_coordinates": {"lat": 6.2907, "lon": -10.7605},
+        "flag_emoji": "🇱🇷"
+    },
+    {
+        "country": "Libya",
+        "capital_coordinates": {"lat": 32.8872, "lon": 13.1913},
+        "flag_emoji": "🇱🇾"
+    },
+    {
+        "country": "Liechtenstein",
+        "capital_coordinates": {"lat": 47.1410, "lon": 9.5209},
+        "flag_emoji": "🇱🇮"
+    },
+    {
+        "country": "Lithuania",
+        "capital_coordinates": {"lat": 54.6872, "lon": 25.2797},
+        "flag_emoji": "🇱🇹"
+    },
+    {
+        "country": "Luxembourg",
+        "capital_coordinates": {"lat": 49.6117, "lon": 6.1319},
+        "flag_emoji": "🇱🇺"
+    },
+    {
+        "country": "Madagascar",
+        "capital_coordinates": {"lat": -18.8792, "lon": 47.5079},
+        "flag_emoji": "🇲🇬"
+    },
+    {
+        "country": "Malawi",
+        "capital_coordinates": {"lat": -13.9631, "lon": 33.7741},
+        "flag_emoji": "🇲🇼"
+    },
+    {
+        "country": "Malaysia",
+        "capital_coordinates": {"lat": 3.1390, "lon": 101.6869},
+        "flag_emoji": "🇲🇾"
+    },
+    {
+        "country": "Maldives",
+        "capital_coordinates": {"lat": 4.1755, "lon": 73.5093},
+        "flag_emoji": "🇲🇻"
+    },
+    {
+        "country": "Mali",
+        "capital_coordinates": {"lat": 12.6392, "lon": -8.0029},
+        "flag_emoji": "🇲🇱"
+    },
+    {
+        "country": "Malta",
+        "capital_coordinates": {"lat": 35.8997, "lon": 14.5147},
+        "flag_emoji": "🇲🇹"
+    },
+    {
+        "country": "Marshall Islands",
+        "capital_coordinates": {"lat": 7.0907, "lon": 171.3803},
+        "flag_emoji": "🇲🇭"
+    },
+    {
+        "country": "Mauritania",
+        "capital_coordinates": {"lat": 18.0735, "lon": -15.9582},
+        "flag_emoji": "🇲🇷"
+    },
+    {
+        "country": "Mauritius",
+        "capital_coordinates": {"lat": -20.1609, "lon": 57.5012},
+        "flag_emoji": "🇲🇺"
+    },
+    {
+        "country": "Mexico",
+        "capital_coordinates": {"lat": 19.4326, "lon": -99.1332},
+        "flag_emoji": "🇲🇽"
+    },
+    {
+        "country": "Micronesia",
+        "capital_coordinates": {"lat": 6.9248, "lon": 158.1611},
+        "flag_emoji": "🇫🇲"
+    },
+    {
+        "country": "Moldova",
+        "capital_coordinates": {"lat": 47.0105, "lon": 28.8638},
+        "flag_emoji": "🇲🇩"
+    },
+    {
+        "country": "Monaco",
+        "capital_coordinates": {"lat": 43.7333, "lon": 7.4167},
+        "flag_emoji": "🇲🇨"
+    },
+    {
+        "country": "Mongolia",
+        "capital_coordinates": {"lat": 47.8864, "lon": 106.9057},
+        "flag_emoji": "🇲🇳"
+    },
+    {
+        "country": "Montenegro",
+        "capital_coordinates": {"lat": 42.4416, "lon": 19.2662},
+        "flag_emoji": "🇲🇪"
+    },
+    {
+        "country": "Morocco",
+        "capital_coordinates": {"lat": 33.9716, "lon": -6.8498},
+        "flag_emoji": "🇲🇦"
+    },
+    {
+        "country": "Mozambique",
+        "capital_coordinates": {"lat": -25.9664, "lon": 32.5737},
+        "flag_emoji": "🇲🇿"
+    },
+    {
+        "country": "Myanmar (formerly Burma)",
+        "capital_coordinates": {"lat": 19.7633, "lon": 96.0785},
+        "flag_emoji": "🇲🇲"
+    },
+    {
+        "country": "Namibia",
+        "capital_coordinates": {"lat": -22.5609, "lon": 17.0658},
+        "flag_emoji": "🇳🇦"
+    },
+    {
+        "country": "Nauru",
+        "capital_coordinates": {"lat": -0.5228, "lon": 166.9315},
+        "flag_emoji": "🇳🇷"
+    },
+    {
+        "country": "Nepal",
+        "capital_coordinates": {"lat": 27.7172, "lon": 85.3240},
+        "flag_emoji": "🇳🇵"
+    },
+    {
+        "country": "Netherlands",
+        "capital_coordinates": {"lat": 52.3676, "lon": 4.9041},
+        "flag_emoji": "🇳🇱"
+    },
+    {
+        "country": "New Zealand",
+        "capital_coordinates": {"lat": -41.2865, "lon": 174.7762},
+        "flag_emoji": "🇳🇿"
+    },
+    {
+        "country": "Nicaragua",
+        "capital_coordinates": {"lat": 12.1150, "lon": -86.2362},
+        "flag_emoji": "🇳🇮"
+    },
+    {
+        "country": "Niger",
+        "capital_coordinates": {"lat": 13.5116, "lon": 2.1254},
+        "flag_emoji": "🇳🇪"
+    },
+    {
+        "country": "Nigeria",
+        "capital_coordinates": {"lat": 9.0765, "lon": 7.3986},
+        "flag_emoji": "🇳🇬"
+    },
+    {
+        "country": "North Korea",
+        "capital_coordinates": {"lat": 39.0392, "lon": 125.7625},
+        "flag_emoji": "🇰🇵"
+    },
+    {
+        "country": "North Macedonia",
+        "capital_coordinates": {"lat": 41.9973, "lon": 21.4280},
+        "flag_emoji": "🇲🇰"
+    },
+    {
+        "country": "Norway",
+        "capital_coordinates": {"lat": 59.9139, "lon": 10.7522},
+        "flag_emoji": "🇳🇴"
+    },
+    {
+        "country": "Oman",
+        "capital_coordinates": {"lat": 23.5880, "lon": 58.3829},
+        "flag_emoji": "🇴🇲"
+    },
+    {
+        "country": "Pakistan",
+        "capital_coordinates": {"lat": 33.6844, "lon": 73.0479},
+        "flag_emoji": "🇵🇰"
+    },
+    {
+        "country": "Palau",
+        "capital_coordinates": {"lat": 7.5000, "lon": 134.6200},
+        "flag_emoji": "🇵🇼"
+    },
+    {
+        "country": "Palestine",
+        "capital_coordinates": {"lat": 31.9474, "lon": 35.2272},
+        "flag_emoji": "🇵🇸"
+    },
+    {
+        "country": "Panama",
+        "capital_coordinates": {"lat": 8.9833, "lon": -79.5167},
+        "flag_emoji": "🇵🇦"
+    },
+    {
+        "country": "Papua New Guinea",
+        "capital_coordinates": {"lat": -9.478, "lon": 147.149},
+        "flag_emoji": "🇵🇬"
+    },
+    {
+        "country": "Paraguay",
+        "capital_coordinates": {"lat": -25.2637, "lon": -57.5759},
+        "flag_emoji": "🇵🇾"
+    },
+    {
+        "country": "Peru",
+        "capital_coordinates": {"lat": -12.0464, "lon": -77.0428},
+        "flag_emoji": "🇵🇪"
+    },
+    {
+        "country": "Philippines",
+        "capital_coordinates": {"lat": 14.5995, "lon": 120.9842},
+        "flag_emoji": "🇵🇭"
+    },
+    {
+        "country": "Poland",
+        "capital_coordinates": {"lat": 52.2297, "lon": 21.0122},
+        "flag_emoji": "🇵🇱"
+    },
+    {
+        "country": "Portugal",
+        "capital_coordinates": {"lat": 38.7223, "lon": -9.1393},
+        "flag_emoji": "🇵🇹"
+    },
+    {
+        "country": "Qatar",
+        "capital_coordinates": {"lat": 25.276987, "lon": 51.520008},
+        "flag_emoji": "🇶🇦"
+    },
+    {
+        "country": "Romania",
+        "capital_coordinates": {"lat": 44.4268, "lon": 26.1025},
+        "flag_emoji": "🇷🇴"
+    },
+    {
+        "country": "Russia",
+        "capital_coordinates": {"lat": 55.7558, "lon": 37.6173},
+        "flag_emoji": "🇷🇺"
+    },
+    {
+        "country": "Rwanda",
+        "capital_coordinates": {"lat": -1.9706, "lon": 30.1044},
+        "flag_emoji": "🇷🇼"
+    },
+    {
+        "country": "Saint Kitts and Nevis",
+        "capital_coordinates": {"lat": 17.3026, "lon": -62.7177},
+        "flag_emoji": "🇰🇳"
+    },
+    {
+        "country": "Saint Lucia",
+        "capital_coordinates": {"lat": 14.0101, "lon": -60.9875},
+        "flag_emoji": "🇱🇨"
+    },
+    {
+        "country": "Saint Vincent and the Grenadines",
+        "capital_coordinates": {"lat": 13.1566, "lon": -61.2248},
+        "flag_emoji": "🇻🇨"
+    },
+    {
+        "country": "Samoa",
+        "capital_coordinates": {"lat": -13.8314, "lon": -171.7645},
+        "flag_emoji": "🇼🇸"
+    },
+    {
+        "country": "San Marino",
+        "capital_coordinates": {"lat": 43.9333, "lon": 12.4500},
+        "flag_emoji": "🇸🇲"
+    },
+    {
+        "country": "Sao Tome and Principe",
+        "capital_coordinates": {"lat": 0.3365, "lon": 6.7273},
+        "flag_emoji": "🇸🇹"
+    },
+    {
+        "country": "Saudi Arabia",
+        "capital_coordinates": {"lat": 24.7136, "lon": 46.6753},
+        "flag_emoji": "🇸🇦"
+    },
+    {
+        "country": "Senegal",
+        "capital_coordinates": {"lat": 14.7167, "lon": -17.4677},
+        "flag_emoji": "🇸🇳"
+    },
+    {
+        "country": "Serbia",
+        "capital_coordinates": {"lat": 44.7866, "lon": 20.4489},
+        "flag_emoji": "🇷🇸"
+    },
+    {
+        "country": "Seychelles",
+        "capital_coordinates": {"lat": -4.6191, "lon": 55.4513},
+        "flag_emoji": "🇸🇨"
+    },
+    {
+        "country": "Sierra Leone",
+        "capital_coordinates": {"lat": 8.4657, "lon": -13.2317},
+        "flag_emoji": "🇸🇱"
+    },
+    {
+        "country": "Singapore",
+        "capital_coordinates": {"lat": 1.3521, "lon": 103.8198},
+        "flag_emoji": "🇸🇬"
+    },
+    {
+        "country": "Slovakia",
+        "capital_coordinates": {"lat": 48.1486, "lon": 17.1077},
+        "flag_emoji": "🇸🇰"
+    },
+    {
+        "country": "Slovenia",
+        "capital_coordinates": {"lat": 46.0569, "lon": 14.5058},
+        "flag_emoji": "🇸🇮"
+    },
+    {
+        "country": "Solomon Islands",
+        "capital_coordinates": {"lat": -9.478, "lon": 160.017},
+        "flag_emoji": "🇸🇧"
+    },
+    {
+        "country": "Somalia",
+        "capital_coordinates": {"lat": 2.0469, "lon": 45.3182},
+        "flag_emoji": "🇸🇴"
+    },
+    {
+        "country": "South Africa",
+        "capital_coordinates": {"lat": -25.7461, "lon": 28.1881},
+        "flag_emoji": "🇿🇦"
+    },
+    {
+        "country": "South Korea",
+        "capital_coordinates": {"lat": 37.5665, "lon": 126.9780},
+        "flag_emoji": "🇰🇷"
+    },
+    {
+        "country": "South Sudan",
+        "capital_coordinates": {"lat": 4.8594, "lon": 31.5713},
+        "flag_emoji": "🇸🇸"
+    },
+    {
+        "country": "Spain",
+        "capital_coordinates": {"lat": 40.4168, "lon": -3.7038},
+        "flag_emoji": "🇪🇸"
+    },
+    {
+        "country": "Sri Lanka",
+        "capital_coordinates": {"lat": 6.9271, "lon": 79.8612},
+        "flag_emoji": "🇱🇰"
+    },
+    {
+        "country": "Sudan",
+        "capital_coordinates": {"lat": 15.5007, "lon": 32.5599},
+        "flag_emoji": "🇸🇩"
+    },
+    {
+        "country": "Suriname",
+        "capital_coordinates": {"lat": 5.8520, "lon": -55.2038},
+        "flag_emoji": "🇸🇷"
+    },
+    {
+        "country": "Sweden",
+        "capital_coordinates": {"lat": 59.3293, "lon": 18.0686},
+        "flag_emoji": "🇸🇪"
+    },
+    {
+        "country": "Switzerland",
+        "capital_coordinates": {"lat": 46.9480, "lon": 7.4474},
+        "flag_emoji": "🇨🇭"
+    },
+    {
+        "country": "Syria",
+        "capital_coordinates": {"lat": 33.5138, "lon": 36.2765},
+        "flag_emoji": "🇸🇾"
+    },
+    {
+        "country": "Taiwan",
+        "capital_coordinates": {"lat": 25.0330, "lon": 121.5654},
+        "flag_emoji": "🇹🇼"
+    },
+    {
+        "country": "Tajikistan",
+        "capital_coordinates": {"lat": 38.5598, "lon": 68.7870},
+        "flag_emoji": "🇹🇯"
+    },
+    {
+        "country": "Tanzania",
+        "capital_coordinates": {"lat": -6.7924, "lon": 39.2083},
+        "flag_emoji": "🇹🇿"
+    },
+    {
+        "country": "Thailand",
+        "capital_coordinates": {"lat": 13.7563, "lon": 100.5018},
+        "flag_emoji": "🇹🇭"
+    },
+    {
+        "country": "Timor-Leste",
+        "capital_coordinates": {"lat": -8.5569, "lon": 125.5603},
+        "flag_emoji": "🇹🇱"
+    },
+    {
+        "country": "Togo",
+        "capital_coordinates": {"lat": 6.1725, "lon": 1.2314},
+        "flag_emoji": "🇹🇬"
+    },
+    {
+        "country": "Tonga",
+        "capital_coordinates": {"lat": -21.1394, "lon": -175.2047},
+        "flag_emoji": "🇹🇴"
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "capital_coordinates": {"lat": 10.6918, "lon": -61.2225},
+        "flag_emoji": "🇹🇹"
+    },
+    {
+        "country": "Tunisia",
+        "capital_coordinates": {"lat": 36.8065, "lon": 10.1815},
+        "flag_emoji": "🇹🇳"
+    },
+    {
+        "country": "Turkey",
+        "capital_coordinates": {"lat": 39.9334, "lon": 32.8597},
+        "flag_emoji": "🇹🇷"
+    },
+    {
+        "country": "Turkmenistan",
+        "capital_coordinates": {"lat": 37.9601, "lon": 58.3261},
+        "flag_emoji": "🇹🇲"
+    },
+    {
+        "country": "Tuvalu",
+        "capital_coordinates": {"lat": -8.5243, "lon": 179.1940},
+        "flag_emoji": "🇹🇻"
+    },
+    {
+        "country": "Uganda",
+        "capital_coordinates": {"lat": 0.3476, "lon": 32.5825},
+        "flag_emoji": "🇺🇬"
+    },
+    {
+        "country": "Ukraine",
+        "capital_coordinates": {"lat": 50.4501, "lon": 30.5234},
+        "flag_emoji": "🇺🇦"
+    },
+    {
+        "country": "United Arab Emirates",
+        "capital_coordinates": {"lat": 24.4539, "lon": 54.3773},
+        "flag_emoji": "🇦🇪"
+    },
+    {
+        "country": "United Kingdom",
+        "capital_coordinates": {"lat": 51.5074, "lon": -0.1278},
+        "flag_emoji": "🇬🇧"
+    },
+    {
+        "country": "United States of America",
+        "capital_coordinates": {"lat": 38.9072, "lon": -77.0369},
+        "flag_emoji": "🇺🇸"
+    },
+    {
+        "country": "Uruguay",
+        "capital_coordinates": {"lat": -34.9011, "lon": -56.1645},
+        "flag_emoji": "🇺🇾"
+    },
+    {
+        "country": "Uzbekistan",
+        "capital_coordinates": {"lat": 41.2995, "lon": 69.2401},
+        "flag_emoji": "🇺🇿"
+    },
+    {
+        "country": "Vanuatu",
+        "capital_coordinates": {"lat": -17.7338, "lon": 168.3273},
+        "flag_emoji": "🇻🇺"
+    },
+    {
+        "country": "Vatican City",
+        "capital_coordinates": {"lat": 41.9029, "lon": 12.4534},
+        "flag_emoji": "🇻🇦"
+    },
+    {
+        "country": "Venezuela",
+        "capital_coordinates": {"lat": 10.4806, "lon": -66.9036},
+        "flag_emoji": "🇻🇪"
+    },
+    {
+        "country": "Vietnam",
+        "capital_coordinates": {"lat": 21.0285, "lon": 105.8542},
+        "flag_emoji": "🇻🇳"
+    },
+    {
+        "country": "Yemen",
+        "capital_coordinates": {"lat": 15.3694, "lon": 44.1910},
+        "flag_emoji": "🇾🇪"
+    },
+    {
+        "country": "Zambia",
+        "capital_coordinates": {"lat": -15.3875, "lon": 28.3228},
+        "flag_emoji": "🇿🇲"
+    },
+    {
+        "country": "Zimbabwe",
+        "capital_coordinates": {"lat": -17.8292, "lon": 31.0522},
+        "flag_emoji": "🇿🇼"
+    }
+]

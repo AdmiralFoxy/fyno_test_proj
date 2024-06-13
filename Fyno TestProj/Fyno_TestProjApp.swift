@@ -12,7 +12,7 @@ import SwiftData
 struct Fyno_TestProjApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Country.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +25,8 @@ struct Fyno_TestProjApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserTravelProfileView()
+                .environment(\.modelContext, sharedModelContainer.mainContext)
         }
-        .modelContainer(sharedModelContainer)
     }
 }
