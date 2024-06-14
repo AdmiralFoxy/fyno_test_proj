@@ -34,13 +34,14 @@ struct GlobeMapView: View {
             .overlay(alignment: .bottom, content: {
                 Color.black.frame(height: 24.0)
             })
-            .onMapCameraChange { context in
-                print(context.region)
-            }
-            .onAppear {
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height * 1.32, alignment: .center)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
         }
     }
     
+}
+
+private let mapSize: (CGFloat) = 390.0 * DefaultViewSize.hScale12iPhone
+
+#Preview {
+    GlobeMapView().frame(width: mapSize, height: mapSize)
 }

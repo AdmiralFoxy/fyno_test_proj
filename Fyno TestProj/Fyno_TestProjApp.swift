@@ -13,20 +13,26 @@ struct Fyno_TestProjApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Country.self,
+            UserProfile.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
+            print("Failed to create ModelContainer: \(error)")
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
             UserTravelProfileView()
-                .environment(\.modelContext, sharedModelContainer.mainContext)
+                .onAppear {
+                    LoadCountriesModel.shared.loadAndSaveCountries(context: sharedModelContainer.mainContext)
+                }
+                .modelContainer(sharedModelContainer)
         }
     }
+    
 }

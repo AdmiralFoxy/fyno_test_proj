@@ -32,67 +32,7 @@ extension View {
 
 
 
-import SwiftUI
-import SwiftData
 
-@Model
-final class UserProfile: Identifiable, Codable {
-    @Attribute
-    var id: UUID
-    
-    @Attribute
-    var image: Data
-    
-    @Attribute
-    var name: String
-    
-    @Attribute
-    var bioInfo: String
-    
-    @Attribute
-    var allCountries: [CountryName]
-    
-    init(id: UUID = UUID(), image: UIImage, name: String, bioInfo: String, allCountries: [CountryName]) {
-        self.id = id
-        self.image = image.pngData()!
-        self.name = name
-        self.bioInfo = bioInfo
-        self.allCountries = allCountries
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case image
-        case name
-        case bioInfo = "bio_info"
-        case allCountries = "all_countries"
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(UUID.self, forKey: .id)
-        self.image = try container.decode(Data.self, forKey: .image)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.bioInfo = try container.decode(String.self, forKey: .bioInfo)
-        self.allCountries = try container.decode([CountryName].self, forKey: .allCountries)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(image, forKey: .image)
-        try container.encode(name, forKey: .name)
-        try container.encode(bioInfo, forKey: .bioInfo)
-        try container.encode(allCountries, forKey: .allCountries)
-    }
-    
-    static let testUser = UserProfile(
-        image: UIImage(named: "woman_test")!,
-        name: "John Doe",
-        bioInfo: "Globe-trotter, fearless adventurer, cultural enthusiast, storyteller",
-        allCountries: []
-    )
-}
 
 
 

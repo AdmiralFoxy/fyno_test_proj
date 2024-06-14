@@ -16,7 +16,7 @@ struct CountryRow: View {
             Text(country.flagEmoji)
                 .frame(height: 24.0)
             
-            Text(country.country)
+            Text(country.countryName)
                 .font(.custom("SF Pro Text", size: 17))
                 .fontWeight(.regular)
                 .lineSpacing(24 - 17)

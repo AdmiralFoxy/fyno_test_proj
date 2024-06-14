@@ -15,6 +15,11 @@
 		E334A4CB2C1A548B0063CC2C /* SelectCountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4CA2C1A548B0063CC2C /* SelectCountryViewModel.swift */; };
 		E334A4CD2C1A54A90063CC2C /* SelectCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4CC2C1A54A90063CC2C /* SelectCountryView.swift */; };
 		E334A4CF2C1B0F590063CC2C /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4CE2C1B0F590063CC2C /* CountryRow.swift */; };
+		E334A4D12C1B2C350063CC2C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D02C1B2C350063CC2C /* UserProfile.swift */; };
+		E334A4D42C1B5E730063CC2C /* ProfileInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D32C1B5E730063CC2C /* ProfileInfoCellView.swift */; };
+		E334A4D62C1B614D0063CC2C /* CountriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */; };
+		E334A4D82C1B8D490063CC2C /* UserCountriesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */; };
+		E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */; };
 		E3BBCD7F2C199EFB00153CB4 /* Fyno_TestProjApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */; };
 		E3BBCD812C199EFB00153CB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD802C199EFB00153CB4 /* ContentView.swift */; };
 		E3BBCD832C199EFB00153CB4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD822C199EFB00153CB4 /* Item.swift */; };
@@ -31,6 +36,11 @@
 		E334A4CA2C1A548B0063CC2C /* SelectCountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryViewModel.swift; sourceTree = "<group>"; };
 		E334A4CC2C1A54A90063CC2C /* SelectCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryView.swift; sourceTree = "<group>"; };
 		E334A4CE2C1B0F590063CC2C /* CountryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
+		E334A4D02C1B2C350063CC2C /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E334A4D32C1B5E730063CC2C /* ProfileInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCellView.swift; sourceTree = "<group>"; };
+		E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableView.swift; sourceTree = "<group>"; };
+		E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountriesInfoView.swift; sourceTree = "<group>"; };
+		E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCountriesModel.swift; sourceTree = "<group>"; };
 		E3BBCD7B2C199EFB00153CB4 /* Fyno TestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyno TestProj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyno_TestProjApp.swift; sourceTree = "<group>"; };
 		E3BBCD802C199EFB00153CB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				E334A4BA2C1A50CD0063CC2C /* countries.json */,
+				E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -72,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E334A4BE2C1A51BB0063CC2C /* DefaultViewSize.swift */,
+				E334A4D02C1B2C350063CC2C /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E334A4C42C1A52D90063CC2C /* UserTravelProfileView.swift */,
+				E334A4D22C1B5DF60063CC2C /* Views */,
 				E334A4C92C1A54730063CC2C /* SelectCountry */,
 				E334A4C62C1A537B0063CC2C /* Models */,
 			);
@@ -110,6 +123,16 @@
 				E334A4CC2C1A54A90063CC2C /* SelectCountryView.swift */,
 			);
 			path = SelectCountry;
+			sourceTree = "<group>";
+		};
+		E334A4D22C1B5DF60063CC2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E334A4D32C1B5E730063CC2C /* ProfileInfoCellView.swift */,
+				E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */,
+				E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E3BBCD722C199EFB00153CB4 = {
@@ -223,13 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E334A4D82C1B8D490063CC2C /* UserCountriesInfoView.swift in Sources */,
 				E334A4C82C1A53830063CC2C /* CountryModel.swift in Sources */,
 				E334A4CF2C1B0F590063CC2C /* CountryRow.swift in Sources */,
 				E334A4CB2C1A548B0063CC2C /* SelectCountryViewModel.swift in Sources */,
 				E3BBCD812C199EFB00153CB4 /* ContentView.swift in Sources */,
 				E3BBCD832C199EFB00153CB4 /* Item.swift in Sources */,
+				E334A4D12C1B2C350063CC2C /* UserProfile.swift in Sources */,
+				E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */,
 				E334A4CD2C1A54A90063CC2C /* SelectCountryView.swift in Sources */,
 				E334A4C22C1A52230063CC2C /* GlobeMapView.swift in Sources */,
+				E334A4D62C1B614D0063CC2C /* CountriesTableView.swift in Sources */,
+				E334A4D42C1B5E730063CC2C /* ProfileInfoCellView.swift in Sources */,
 				E334A4C52C1A52D90063CC2C /* UserTravelProfileView.swift in Sources */,
 				E3BBCD7F2C199EFB00153CB4 /* Fyno_TestProjApp.swift in Sources */,
 				E334A4BF2C1A51BB0063CC2C /* DefaultViewSize.swift in Sources */,
