@@ -31,6 +31,8 @@ enum CountriesTableViewType {
 
 struct CountriesTableView: View {
     
+    @Environment(\.modelContext) var modelContext
+    
     @State private var showAddCountry = Bool()
     @State private var countriesToShow: Int = 4
     @State private var isShowMore: Bool = false
@@ -43,11 +45,15 @@ struct CountriesTableView: View {
     private let hResize = DefaultViewSize.hScale12iPhone
     private let vResize = DefaultViewSize.vScale12iPhone
     
+    var user: UserProfile {
+        userProfile.first ?? .testUser
+    }
+    
     var filteredCountries: [Country] {
         return allCountries.filter {
             return viewType == .haveBeen
-            ? userProfile.first!.haveBeenCountriesName.contains($0.countryName)
-            : userProfile.first!.wantBeCountriesName.contains($0.countryName)
+            ? user.haveBeenCountriesName.contains($0.countryName)
+            : user.wantBeCountriesName.contains($0.countryName)
         }
     }
     
@@ -97,18 +103,44 @@ struct CountriesTableView: View {
             .frame(height: 48.0 * vResize, alignment: .center)
             .padding(.top, 8.0 * vResize)
             
-            List {
-                ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : (filteredCountries.count > 4 ? 3 : 4))) { country in
-                    CountryRow(country: country)
-                        .frame(height: 48.0 * vResize)
-                        .listRowSeparator(.hidden)
+            if filteredCountries.isEmpty {
+                VStack(alignment: .center, spacing: 20) {
+                    Image(systemName: "globe")
+                        .resizable()
+                        .frame(width: 56.0, height: 56.0)
+                        .foregroundStyle(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.blue, Color.green]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .padding(.top, 16.0)
+                    
+                    Text("You don't have any country")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                    
+                    Text("Please add some countries to your list.")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
-                .background(Color.clear)
+                .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
+            } else {
+                List {
+                    ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : (filteredCountries.count > 4 ? 3 : 4)), id: \.self) { country in
+                        CountryRow(country: country)
+                            .frame(height: 48.0 * vResize)
+                            .listRowSeparator(.hidden)
+                    }
+                    .onDelete(perform: deleteItems)
+                    .background(Color.clear)
+                }
+                .listStyle(PlainListStyle())
+                .scrollDisabled(true)
+                .scrollIndicators(.hidden)
+                .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
             }
-            .listStyle(PlainListStyle())
-            .scrollDisabled(true)
-            .scrollIndicators(.hidden)
-            .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
             
             if filteredCountries.count >= countriesToShow {
                 HStack(alignment: .center, spacing: 0.0) {
@@ -163,6 +195,31 @@ struct CountriesTableView: View {
             SelectCountryView(viewType: viewType.mapToSCViewType)
         })
     }
+    
+    private func deleteItems(at offsets: IndexSet) {
+        withAnimation {
+            switch viewType {
+            case .haveBeen:
+                var countriesArray = Array(user.haveBeenCountriesName)
+                offsets.forEach { index in
+                    countriesArray.remove(at: index)
+                }
+                
+                user.haveBeenCountriesName = Set(countriesArray)
+                
+            case .wantBe:
+                var countriesArray = Array(user.wantBeCountriesName)
+                offsets.forEach { index in
+                    countriesArray.remove(at: index)
+                }
+                
+                user.wantBeCountriesName = Set(countriesArray)
+            }
+            
+            modelContext.insert(user)
+        }
+    }
+
 }
 
 #Preview {

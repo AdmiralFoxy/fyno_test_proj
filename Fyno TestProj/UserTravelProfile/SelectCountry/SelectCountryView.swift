@@ -8,6 +8,15 @@
 import SwiftUI
 import SwiftData
 
+enum ViewState: Equatable {
+    
+    case idle
+    case loading
+    case onSuccess
+    case onError(message: String)
+    
+}
+
 enum SelectCountryViewType {
     
     case saveWantBe
@@ -20,20 +29,20 @@ struct SelectCountryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
     
-    @Query private var allCountries: [Country]
+    @Query(sort: \Country.countryName, animation: .default) private var allCountries: [Country]
     @Query private var userProfile: [UserProfile]
+    
+    @State private var viewState: ViewState = .idle
     
     var filteredAllCountries: [Country] {
         return allCountries.filter {
-            return viewType == .saveHaveBeen
-            ? !userProfile.first!.haveBeenCountriesName.contains($0.countryName)
-            : !userProfile.first!.wantBeCountriesName.contains($0.countryName)
+            return !userProfile.first!.haveBeenCountriesName.contains($0.countryName) && !userProfile.first!.wantBeCountriesName.contains($0.countryName)
         }
     }
     
     let viewType: SelectCountryViewType
     
-    init(viewType: SelectCountryViewType) {
+    init( viewType: SelectCountryViewType) {
         self.viewType = viewType
     }
     
@@ -65,17 +74,26 @@ struct SelectCountryView: View {
                     CountryRow(country: country)
                     
                     Button(action: {
-                        guard var user = userProfile.first else { return }
-                        
-                        switch viewType {
-                        case .saveWantBe:
-                            user.wantBeCountriesName.insert(country.countryName)
-                        case .saveHaveBeen:
-                            user.haveBeenCountriesName.insert(country.countryName)
+                        withAnimation {
+                            viewState = .loading
                         }
                         
-                        modelContext.insert(user)
-                        dismiss.callAsFunction()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                            guard let user = userProfile.first else {
+                                viewState = .onError(message: "Error user load")
+                                return
+                            }
+                            
+                            switch viewType {
+                            case .saveWantBe:
+                                user.wantBeCountriesName.insert(country.countryName)
+                            case .saveHaveBeen:
+                                user.haveBeenCountriesName.insert(country.countryName)
+                            }
+                            modelContext.insert(user)
+                            
+                            dismiss.callAsFunction()
+                        }
                     }, label: {
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
@@ -93,7 +111,25 @@ struct SelectCountryView: View {
         }
         .padding(.horizontal, 24.0)
         .frame(maxWidth: .infinity)
+        .overlay(alignment: .center) {
+            if viewState == .loading {
+                ProgressLoadView()
+            }
+        }
     }
+}
+
+struct ProgressLoadView: View {
+    
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.3)
+            
+            ProgressView()
+        }
+        .ignoresSafeArea(.all)
+    }
+    
 }
 
 #Preview {
