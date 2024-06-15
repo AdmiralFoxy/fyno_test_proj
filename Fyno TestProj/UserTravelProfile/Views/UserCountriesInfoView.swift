@@ -12,7 +12,6 @@ struct UserCountriesInfoView: View {
     
     @Query private var userProfile: [UserProfile]
     @Query private var allCountries: [Country]
-//    @Query private var visitedCountries: [Country]
     
     private let vResize = DefaultViewSize.vScale12iPhone
     
@@ -20,19 +19,11 @@ struct UserCountriesInfoView: View {
         userProfile.first?.haveBeenCountriesName.count ?? 0
     }
     
-    init() {
-//        _visitedCountries = Query(filter: #Predicate<Country> { country in
-//            guard let userProfile = userProfile.first else { return false }
-//            
-//            return userProfile.allCountriesName.contains(country.countryName)
-//        }, sort: \Country.countryName)
-    }
-    
     var body: some View {
         HStack {
             Spacer()
             
-            VStack {
+            VStack(alignment: .center, spacing: 0.0) {
                 Text(userBeenCountrCount.description)
                     .font(.system(size: 22, weight: .semibold, design: .default))
                     .lineSpacing(28 - 22)
@@ -54,7 +45,7 @@ struct UserCountriesInfoView: View {
             
             Spacer()
             
-            VStack {
+            VStack(alignment: .center, spacing: 0.0) {
                 setupPercentageView()
                     .font(.system(size: 22, weight: .semibold, design: .default))
                     .lineSpacing(28 - 22)
@@ -72,7 +63,7 @@ struct UserCountriesInfoView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 94.0 * vResize)
+        .frame(height: 74.0 * vResize)
     }
     
     func setupPercentageView() -> some View {

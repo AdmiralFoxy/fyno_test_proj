@@ -43,6 +43,7 @@ struct UserTravelProfileView: View {
                 VStack(alignment: .center, spacing: 0.0) {
                     UserCountriesInfoView()
                         .modelContext(modelContext)
+                        .padding(.top, 8.0)
                     
                     beenCountriesView
                     wantToBeeCountriesView

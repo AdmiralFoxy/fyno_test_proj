@@ -105,6 +105,8 @@ struct CountriesTableView: View {
             
             if filteredCountries.isEmpty {
                 VStack(alignment: .center, spacing: 20) {
+                    Spacer()
+                    
                     Image(systemName: "globe")
                         .resizable()
                         .frame(width: 56.0, height: 56.0)
@@ -115,7 +117,6 @@ struct CountriesTableView: View {
                                 endPoint: .bottomTrailing
                             )
                         )
-                        .padding(.top, 16.0)
                     
                     Text("You don't have any country")
                         .font(.headline)
@@ -124,8 +125,9 @@ struct CountriesTableView: View {
                     Text("Please add some countries to your list.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                    
+                    Spacer()
                 }
-                .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
             } else {
                 List {
                     ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : (filteredCountries.count > 4 ? 3 : 4)), id: \.self) { country in
@@ -139,7 +141,7 @@ struct CountriesTableView: View {
                 .listStyle(PlainListStyle())
                 .scrollDisabled(true)
                 .scrollIndicators(.hidden)
-                .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
+                .frame(height: filteredCountries.count > 4 ? (CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize) : CGFloat(filteredCountries.count + 1) * 48.0)
             }
             
             if filteredCountries.count >= countriesToShow {
@@ -189,7 +191,7 @@ struct CountriesTableView: View {
                 
             }
         }
-        .frame(height: isShowMore ? nil : 256.0 * vResize)
+        .frame(height: filteredCountries.count == 0 ? 256.0 * vResize : nil)
         .padding(.horizontal, 24.0)
         .sheet(isPresented: $showAddCountry, content: {
             SelectCountryView(viewType: viewType.mapToSCViewType)
