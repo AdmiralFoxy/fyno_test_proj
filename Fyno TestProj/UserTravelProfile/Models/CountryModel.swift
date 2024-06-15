@@ -51,7 +51,20 @@ final class Country: Identifiable, Codable {
         Country(countryName: "Canada", capitalCoordinates: Coordinates(lat: 45.4215, lon: -75.6972), flagEmoji: "🇨🇦"),
         Country(countryName: "United Kingdom", capitalCoordinates: Coordinates(lat: 51.5074, lon: -0.1278), flagEmoji: "🇬🇧"),
         Country(countryName: "Germany", capitalCoordinates: Coordinates(lat: 52.5200, lon: 13.4050), flagEmoji: "🇩🇪"),
-        Country(countryName: "Japan", capitalCoordinates: Coordinates(lat: 35.6895, lon: 139.6917), flagEmoji: "🇯🇵")
+        Country(countryName: "Japan", capitalCoordinates: Coordinates(lat: 35.6895, lon: 139.6917), flagEmoji: "🇯🇵"),
+        Country(countryName: "Monaco", capitalCoordinates: Coordinates(lat: 43.7333, lon: 7.4167), flagEmoji: "🇲🇨"),
+        Country(countryName: "Mongolia", capitalCoordinates: Coordinates(lat: 47.8864, lon: 106.9057), flagEmoji: "🇲🇳"),
+        Country(countryName: "Montenegro", capitalCoordinates: Coordinates(lat: 42.4416, lon: 19.2662), flagEmoji: "🇲🇪"),
+        Country(countryName: "Morocco", capitalCoordinates: Coordinates(lat: 33.9716, lon: -6.8498), flagEmoji: "🇲🇦"),
+        Country(countryName: "Mozambique", capitalCoordinates: Coordinates(lat: -25.9664, lon: 32.5737), flagEmoji: "🇲🇿"),
+        Country(countryName: "Myanmar (formerly Burma)", capitalCoordinates: Coordinates(lat: 19.7633, lon: 96.0785), flagEmoji: "🇲🇲"),
+        Country(countryName: "Namibia", capitalCoordinates: Coordinates(lat: -22.5609, lon: 17.0658), flagEmoji: "🇳🇦"),
+        Country(countryName: "Nauru", capitalCoordinates: Coordinates(lat: -0.5228, lon: 166.9315), flagEmoji: "🇳🇷"),
+        Country(countryName: "Nepal", capitalCoordinates: Coordinates(lat: 27.7172, lon: 85.3240), flagEmoji: "🇳🇵"),
+        Country(countryName: "Netherlands", capitalCoordinates: Coordinates(lat: 52.3676, lon: 4.9041), flagEmoji: "🇳🇱"),
+        Country(countryName: "New Zealand", capitalCoordinates: Coordinates(lat: -41.2865, lon: 174.7762), flagEmoji: "🇳🇿"),
+        Country(countryName: "Nicaragua", capitalCoordinates: Coordinates(lat: 12.1150, lon: -86.2362), flagEmoji: "🇳🇮"),
+        Country(countryName: "Niger", capitalCoordinates: Coordinates(lat: 13.5116, lon: 2.1254), flagEmoji: "🇳🇪")
     ]
 }
 

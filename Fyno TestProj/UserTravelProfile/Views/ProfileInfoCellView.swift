@@ -51,6 +51,7 @@ struct ProfileInfoCellView: View {
             Spacer()
         }
         .frame(height: 80)
+        .padding(.horizontal, 24.0)
     }
     
     func setupProfileImage(_ userProfile: [UserProfile]) -> UIImage {

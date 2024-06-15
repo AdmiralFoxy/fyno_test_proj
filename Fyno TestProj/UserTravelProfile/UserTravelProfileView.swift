@@ -42,11 +42,12 @@ struct UserTravelProfileView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     UserCountriesInfoView()
+                        .modelContext(modelContext)
                     
                     beenCountriesView
                     wantToBeeCountriesView
                 }
-            }
+            }.disableBounces()
             
             Spacer()
         }
@@ -58,15 +59,14 @@ struct UserTravelProfileView: View {
     }
     
     var beenCountriesView: some View {
-        CountriesTableView()
+        CountriesTableView(viewType: .haveBeen)
             .modelContext(modelContext)
     }
     
     var wantToBeeCountriesView: some View {
-        EmptyView()
+        CountriesTableView(viewType: .wantBe)
+            .modelContext(modelContext)
     }
-    
-    
     
 }
 
@@ -85,3 +85,21 @@ struct UserTravelProfileView: View {
     }
 }
 
+
+extension View {
+  func disableBounces() -> some View {
+    modifier(DisableBouncesModifier())
+  }
+}
+
+struct DisableBouncesModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .onAppear {
+        UIScrollView.appearance().bounces = false
+      }
+      .onDisappear {
+        UIScrollView.appearance().bounces = true
+      }
+  }
+}
