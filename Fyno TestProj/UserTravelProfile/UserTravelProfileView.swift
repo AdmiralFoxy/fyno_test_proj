@@ -40,16 +40,15 @@ struct UserTravelProfileView: View {
                 .modelContext(modelContext)
             
             ScrollView(showsIndicators: false) {
-                VStack {
+                VStack(alignment: .center, spacing: 0.0) {
                     UserCountriesInfoView()
                         .modelContext(modelContext)
                     
                     beenCountriesView
                     wantToBeeCountriesView
                 }
+                .padding(.bottom, 30.0)
             }.disableBounces()
-            
-            Spacer()
         }
         .background {
             RoundedRectangle(cornerRadius: 20.0, style: .circular)

@@ -12,9 +12,9 @@ struct CountryRow: View {
     var country: Country
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 0.0) {
             Text(country.flagEmoji)
-                .frame(height: 24.0)
+                .frame(width: 24.0, height: 24.0)
             
             Text(country.countryName)
                 .font(.custom("SF Pro Text", size: 17))
@@ -22,6 +22,7 @@ struct CountryRow: View {
                 .lineSpacing(24 - 17)
                 .kerning(-0.408)
                 .multilineTextAlignment(.leading)
+                .padding(.leading, 8.0)
             
             Spacer()
         }

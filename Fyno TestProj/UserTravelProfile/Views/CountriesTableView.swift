@@ -29,6 +29,9 @@ struct CountriesTableView: View {
     
     let viewType: CountriesTableViewType
     
+    private let hResize = DefaultViewSize.hScale12iPhone
+    private let vResize = DefaultViewSize.vScale12iPhone
+    
     var filteredCountries: [Country] {
         return allCountries.filter {
             return viewType == .haveBeen
@@ -47,8 +50,8 @@ struct CountriesTableView: View {
             
             HStack {
                 Text(viewType == .haveBeen ? "I’ve been to" : "My bucket list")
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                    .lineSpacing(24 - 17)
+                    .font(.system(size: 17 * vResize, weight: .semibold, design: .default))
+                    .lineSpacing((24 - 17) * vResize)
                     .kerning(-0.408)
                     .multilineTextAlignment(.leading)
                 
@@ -60,11 +63,11 @@ struct CountriesTableView: View {
                     HStack(alignment: .center, spacing: 0.0) {
                         Image("plus_icon")
                             .resizable()
-                            .frame(width: 32.0, height: 32.0, alignment: .center)
+                            .frame(width: 32.0 * vResize, height: 32.0 * vResize, alignment: .center)
                         
                         Text("Add country")
-                            .font(.system(size: 15, weight: .semibold, design: .default))
-                            .lineSpacing(32 - 15) // Line height minus font size
+                            .font(.system(size: 15 * vResize, weight: .semibold, design: .default))
+                            .lineSpacing((32 - 15) * vResize)
                             .kerning(-0.1)
                             .multilineTextAlignment(.trailing)
                             .foregroundStyle(Color(red: 88 / 255, green: 86 / 255, blue: 214 / 255))
@@ -75,15 +78,16 @@ struct CountriesTableView: View {
                         RoundedRectangle(cornerRadius: 40.0)
                             .foregroundStyle(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
                     }
-                }.frame(height: 32.0, alignment: .center)
+                }.frame(height: 32.0 * vResize, alignment: .center)
                 
             }
-            .padding(.top, 16.0)
+            .frame(height: 48.0 * vResize, alignment: .center)
+            .padding(.top, 8.0 * vResize)
             
             List {
                 ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : (filteredCountries.count > 4 ? 3 : 4))) { country in
                     CountryRow(country: country)
-                        .frame(height: 48.0)
+                        .frame(height: 48.0 * vResize)
                         .listRowSeparator(.hidden)
                 }
                 .background(Color.clear)
@@ -91,6 +95,7 @@ struct CountriesTableView: View {
             .listStyle(PlainListStyle())
             .scrollDisabled(true)
             .scrollIndicators(.hidden)
+            .frame(height: CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize)
             
             if filteredCountries.count >= countriesToShow {
                 HStack(alignment: .center, spacing: 0.0) {
@@ -100,12 +105,20 @@ struct CountriesTableView: View {
                             isShowMore = true
                         }
                     }) {
-                        HStack {
+                        HStack(alignment: .center, spacing: 0.0) {
                             Image("chevron-down-small")
+                                .resizable()
+                                .frame(width: 24.0 * vResize, height: 24.0 * vResize)
                             
                             Text("See \(filteredCountries.count > 4 ? (!isShowMore ? filteredCountries.count - countriesToShow + 1 : filteredCountries.count - countriesToShow).description : "" ) More")
+                                .font(.system(size: 17, weight: .regular, design: .default))
+                                .lineSpacing(24 - 17)
+                                .kerning(-0.40799999237060547)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 0.8))
+                                .padding(.leading, 8.0)
                         }
-                    }
+                    }.opacity(filteredCountries.count - countriesToShow == 0 ? 0.0 : 1.0)
                     
                     Spacer()
                     
@@ -116,18 +129,22 @@ struct CountriesTableView: View {
                         }
                     }) {
                         HStack {
-                            
-                            Text("Hide More")
+                            Text("Hide All")
+                                .font(.system(size: 17, weight: .regular, design: .default))
+                                .lineSpacing(24 - 17)
+                                .kerning(-0.40799999237060547)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 0.8))
                         }
                     }
                     .opacity(countriesToShow > 4 ? 1.0 : 0.0)
+                    .padding(.trailing, 16.0)
                 }
+                .frame(height: 48.0 * vResize)
                 
             }
-            
-            Spacer()
         }
-        .frame(height: isShowMore ? CGFloat(countriesToShow + 1) * 48.0 : 256.0)
+        .frame(height: isShowMore ? nil : 256.0 * vResize)
         .padding(.horizontal, 24.0)
     }
 }
@@ -141,13 +158,8 @@ struct CountriesTableView: View {
         ]), configurations: config)
         
         return VStack {
-            Group {
-                CountriesTableView(viewType: .haveBeen)
-                
-                //                CountriesTableView(viewType: .wantBe)
-            }.border(.red, width: 1.0)
+            CountriesTableView(viewType: .haveBeen)
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
         .onAppear {
             container.mainContext.insert(UserProfile.testUser)
             LoadCountriesModel.shared.loadAndSaveCountries(context: container.mainContext)
