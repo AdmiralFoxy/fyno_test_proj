@@ -21,10 +21,10 @@ class UserProfile: Identifiable, Hashable {
     
     var name: String
     var bioInfo: String
-    var haveBeenCountriesName: [String]
-    var wantBeCountriesName: [String]
+    var haveBeenCountriesName: Set<String>
+    var wantBeCountriesName: Set<String>
     
-    init(id: UUID = UUID(), image: Data, name: String, bioInfo: String, haveBeenCountriesName: [String], wantBeCountriesName: [String]) {
+    init(id: UUID = UUID(), image: Data, name: String, bioInfo: String, haveBeenCountriesName: Set<String>, wantBeCountriesName: Set<String>) {
         self.id = id
         self.image = image
         self.name = name
@@ -37,7 +37,7 @@ class UserProfile: Identifiable, Hashable {
         image: UIImage(named: "woman_test")!.pngData()!,
         name: "John Doe",
         bioInfo: "Globe-trotter, fearless adventurer, cultural enthusiast, storyteller",
-        haveBeenCountriesName: ["United States", "Canada", "Germany", "Montenegro", "Morocco", "Mozambique", "Myanmar (formerly Burma)", "United Kingdom", "Japan", "Monaco", "Mongolia", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger"],
-        wantBeCountriesName: ["United Kingdom", "Japan", "Monaco", "Mongolia", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger"]
+        haveBeenCountriesName: ["United States of America"],
+        wantBeCountriesName: ["United Kingdom", "Japan"]
     )
 }

@@ -17,15 +17,26 @@ enum CountriesTableViewType {
     case haveBeen
     case wantBe
     
+    var mapToSCViewType: SelectCountryViewType {
+        switch self {
+        case .haveBeen:
+            return .saveHaveBeen
+            
+        case .wantBe:
+            return .saveWantBe
+        }
+    }
+    
 }
 
 struct CountriesTableView: View {
     
+    @State private var showAddCountry = Bool()
     @State private var countriesToShow: Int = 4
     @State private var isShowMore: Bool = false
     
-    /*@Query*/ private var allCountries: [Country] = Country.testCountries
-    /*@Query*/ private var userProfile: [UserProfile] = [.testUser]
+    @Query private var allCountries: [Country]
+    @Query private var userProfile: [UserProfile]
     
     let viewType: CountriesTableViewType
     
@@ -65,13 +76,15 @@ struct CountriesTableView: View {
                             .resizable()
                             .frame(width: 32.0 * vResize, height: 32.0 * vResize, alignment: .center)
                         
-                        Text("Add country")
-                            .font(.system(size: 15 * vResize, weight: .semibold, design: .default))
-                            .lineSpacing((32 - 15) * vResize)
-                            .kerning(-0.1)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundStyle(Color(red: 88 / 255, green: 86 / 255, blue: 214 / 255))
-                            .padding(.trailing, 8.0)
+                        Button(action: { showAddCountry = true }, label: {
+                            Text("Add country")
+                                .font(.system(size: 15 * vResize, weight: .semibold, design: .default))
+                                .lineSpacing((32 - 15) * vResize)
+                                .kerning(-0.1)
+                                .multilineTextAlignment(.trailing)
+                                .foregroundStyle(Color(red: 88 / 255, green: 86 / 255, blue: 214 / 255))
+                                .padding(.trailing, 8.0)
+                        })
                     }
                     .padding(.horizontal, 8.0)
                     .background {
@@ -146,6 +159,9 @@ struct CountriesTableView: View {
         }
         .frame(height: isShowMore ? nil : 256.0 * vResize)
         .padding(.horizontal, 24.0)
+        .sheet(isPresented: $showAddCountry, content: {
+            SelectCountryView(viewType: viewType.mapToSCViewType)
+        })
     }
 }
 
