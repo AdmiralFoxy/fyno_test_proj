@@ -14,8 +14,8 @@ final class Country: Identifiable, Codable {
     @Attribute
     var countryName: String
     
-    @Attribute
-    var capitalCoordinates: Coordinates
+//    @Relationship(deleteRule: .cascade)
+    var capitalCoordinates: Coordinates?
     
     @Attribute
     var flagEmoji: String
@@ -26,7 +26,7 @@ final class Country: Identifiable, Codable {
         case flagEmoji = "flag_emoji"
     }
     
-    init(countryName: String, capitalCoordinates: Coordinates, flagEmoji: String) {
+    init(countryName: String, capitalCoordinates: Coordinates? = nil, flagEmoji: String) {
         self.countryName = countryName
         self.capitalCoordinates = capitalCoordinates
         self.flagEmoji = flagEmoji
@@ -47,7 +47,6 @@ final class Country: Identifiable, Codable {
     }
     
     static let testCountries = [
-        Country(countryName: "United States", capitalCoordinates: Coordinates(lat: 38.8951, lon: -77.0364), flagEmoji: "🇺🇸"),
         Country(countryName: "Canada", capitalCoordinates: Coordinates(lat: 45.4215, lon: -75.6972), flagEmoji: "🇨🇦"),
         Country(countryName: "United Kingdom", capitalCoordinates: Coordinates(lat: 51.5074, lon: -0.1278), flagEmoji: "🇬🇧"),
         Country(countryName: "Germany", capitalCoordinates: Coordinates(lat: 52.5200, lon: 13.4050), flagEmoji: "🇩🇪"),
@@ -76,20 +75,25 @@ final class Coordinates: Codable {
     @Attribute
     var lon: Double
     
+    @Relationship(deleteRule: .cascade, inverse: \Country.capitalCoordinates)
+    var country: [Country]
+    
     enum CodingKeys: String, CodingKey {
         case lat
         case lon
     }
     
-    init(lat: Double, lon: Double) {
+    init(lat: Double, lon: Double, country: [Country] = []) {
         self.lat = lat
         self.lon = lon
+        self.country = country
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.lat = try container.decode(Double.self, forKey: .lat)
         self.lon = try container.decode(Double.self, forKey: .lon)
+        self.country = []
     }
     
     func encode(to encoder: Encoder) throws {

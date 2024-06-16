@@ -37,7 +37,7 @@ class UserProfile: Identifiable, Hashable {
         image: UIImage(named: "woman_test")!.pngData()!,
         name: "John Doe",
         bioInfo: "Globe-trotter, fearless adventurer, cultural enthusiast, storyteller",
-        haveBeenCountriesName: ["United States of America"],
-        wantBeCountriesName: ["United Kingdom", "Japan"]
+        haveBeenCountriesName: ["Canada", "United Kingdom"],
+        wantBeCountriesName: []
     )
 }

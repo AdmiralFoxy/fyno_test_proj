@@ -13,7 +13,8 @@ struct Fyno_TestProjApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Country.self,
-            UserProfile.self
+            UserProfile.self,
+            Coordinates.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         

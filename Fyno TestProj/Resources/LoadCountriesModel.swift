@@ -25,6 +25,9 @@ struct UserDefault<T> {
 
 struct UserDefaultStorage {
     
+    @UserDefault(key: "startUserWasSetup", defaultValue: false)
+    static var startUserWasSetup: Bool
+    
     @UserDefault(key: "allCountriesWasSaved", defaultValue: false)
     static var allCountriesWasSaved: Bool
     

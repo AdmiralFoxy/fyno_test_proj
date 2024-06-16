@@ -20,11 +20,15 @@ struct UserTravelProfileView: View {
     var body: some View {
         ZStack { }
             .onAppear {
-                modelContext.insert(UserProfile.testUser)
+                if UserDefaultStorage.startUserWasSetup == false {
+                    modelContext.insert(UserProfile.testUser)
+                    UserDefaultStorage.startUserWasSetup = true
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(alignment: .top) {
                 GlobeMapView()
+                    .modelContext(modelContext)
                     .frame(width: mapSize, height: mapSize + 44.0)
                     .padding(.top, -24.0)
             }

@@ -130,7 +130,7 @@ struct CountriesTableView: View {
                 }
             } else {
                 List {
-                    ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : (filteredCountries.count > 4 ? 3 : 4)), id: \.self) { country in
+                    ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : 4), id: \.self) { country in
                         CountryRow(country: country)
                             .frame(height: 48.0 * vResize)
                             .listRowSeparator(.hidden)
@@ -141,7 +141,7 @@ struct CountriesTableView: View {
                 .listStyle(PlainListStyle())
                 .scrollDisabled(true)
                 .scrollIndicators(.hidden)
-                .frame(height: filteredCountries.count > 4 ? (CGFloat(!isShowMore ? countriesToShow - 1 : countriesToShow) * 48.0 * vResize) : CGFloat(filteredCountries.count + 1) * 48.0)
+                .frame(height: calculateFrameHeight())
             }
             
             if filteredCountries.count >= countriesToShow {
@@ -163,9 +163,10 @@ struct CountriesTableView: View {
                                 .kerning(-0.40799999237060547)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color(red: 60/255, green: 60/255, blue: 67/255, opacity: 0.8))
-                                .padding(.leading, 8.0)
+                                .padding(.leading, 6.0)
                         }
-                    }.opacity(filteredCountries.count - countriesToShow == 0 ? 0.0 : 1.0)
+                    }
+                    .opacity(filteredCountries.count - countriesToShow == 0 ? 0.0 : 1.0)
                     
                     Spacer()
                     
@@ -187,8 +188,7 @@ struct CountriesTableView: View {
                     .opacity(countriesToShow > 4 ? 1.0 : 0.0)
                     .padding(.trailing, 16.0)
                 }
-                .frame(height: 48.0 * vResize)
-                
+                .frame(height: filteredCountries.count <= 4 ? 0.0 : 48.0 * vResize)
             }
         }
         .frame(height: filteredCountries.count == 0 ? 256.0 * vResize : nil)
@@ -197,6 +197,16 @@ struct CountriesTableView: View {
             SelectCountryView(viewType: viewType.mapToSCViewType)
         })
     }
+    
+    private func calculateFrameHeight() -> CGFloat {
+            if filteredCountries.count > 4 {
+                return CGFloat(isShowMore ? countriesToShow : countriesToShow) * 48.0
+            } else if filteredCountries.count == 4 {
+                return CGFloat(4) * 48.0 + 24.0
+            } else {
+                return CGFloat(filteredCountries.count) * 48.0 + 24.0
+            }
+        }
     
     private func deleteItems(at offsets: IndexSet) {
         withAnimation {
@@ -236,8 +246,6 @@ struct CountriesTableView: View {
             CountriesTableView(viewType: .haveBeen)
         }
         .onAppear {
-            container.mainContext.insert(UserProfile.testUser)
-            LoadCountriesModel.shared.loadAndSaveCountries(context: container.mainContext)
         }
         .modelContainer(container)
     } catch {
