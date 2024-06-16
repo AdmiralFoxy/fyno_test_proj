@@ -14,7 +14,6 @@ final class Country: Identifiable, Codable {
     @Attribute
     var countryName: String
     
-//    @Relationship(deleteRule: .cascade)
     var capitalCoordinates: Coordinates?
     
     @Attribute
@@ -65,40 +64,4 @@ final class Country: Identifiable, Codable {
         Country(countryName: "Nicaragua", capitalCoordinates: Coordinates(lat: 12.1150, lon: -86.2362), flagEmoji: "🇳🇮"),
         Country(countryName: "Niger", capitalCoordinates: Coordinates(lat: 13.5116, lon: 2.1254), flagEmoji: "🇳🇪")
     ]
-}
-
-@Model
-final class Coordinates: Codable {
-    @Attribute
-    var lat: Double
-    
-    @Attribute
-    var lon: Double
-    
-    @Relationship(deleteRule: .cascade, inverse: \Country.capitalCoordinates)
-    var country: [Country]
-    
-    enum CodingKeys: String, CodingKey {
-        case lat
-        case lon
-    }
-    
-    init(lat: Double, lon: Double, country: [Country] = []) {
-        self.lat = lat
-        self.lon = lon
-        self.country = country
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.lat = try container.decode(Double.self, forKey: .lat)
-        self.lon = try container.decode(Double.self, forKey: .lon)
-        self.country = []
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(lat, forKey: .lat)
-        try container.encode(lon, forKey: .lon)
-    }
 }

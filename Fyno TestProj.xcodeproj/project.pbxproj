@@ -20,6 +20,13 @@
 		E334A4D82C1B8D490063CC2C /* UserCountriesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */; };
 		E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */; };
 		E39C190A2C1F5E1100A7202F /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19092C1F5E1100A7202F /* CustomAnnotationView.swift */; };
+		E39C190D2C1F74B000A7202F /* CountriesTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C190C2C1F74B000A7202F /* CountriesTableViewType.swift */; };
+		E39C19102C1F7CD700A7202F /* Ext+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C190F2C1F7CD700A7202F /* Ext+View.swift */; };
+		E39C19122C1F81E600A7202F /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19112C1F81E600A7202F /* ViewState.swift */; };
+		E39C19142C1F81F200A7202F /* SelectCountryViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19132C1F81F200A7202F /* SelectCountryViewType.swift */; };
+		E39C19172C1F823500A7202F /* ProgressLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19162C1F823500A7202F /* ProgressLoadView.swift */; };
+		E39C19192C1F833800A7202F /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19182C1F833800A7202F /* Coordinates.swift */; };
+		E39C191C2C1F836500A7202F /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C191B2C1F836500A7202F /* UserDefault.swift */; };
 		E3BBCD7F2C199EFB00153CB4 /* Fyno_TestProjApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */; };
 		E3BBCD852C199EFC00153CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BBCD842C199EFC00153CB4 /* Assets.xcassets */; };
 		E3BBCD892C199EFC00153CB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BBCD882C199EFC00153CB4 /* Preview Assets.xcassets */; };
@@ -39,6 +46,13 @@
 		E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountriesInfoView.swift; sourceTree = "<group>"; };
 		E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCountriesModel.swift; sourceTree = "<group>"; };
 		E39C19092C1F5E1100A7202F /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		E39C190C2C1F74B000A7202F /* CountriesTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewType.swift; sourceTree = "<group>"; };
+		E39C190F2C1F7CD700A7202F /* Ext+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+View.swift"; sourceTree = "<group>"; };
+		E39C19112C1F81E600A7202F /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		E39C19132C1F81F200A7202F /* SelectCountryViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryViewType.swift; sourceTree = "<group>"; };
+		E39C19162C1F823500A7202F /* ProgressLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLoadView.swift; sourceTree = "<group>"; };
+		E39C19182C1F833800A7202F /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		E39C191B2C1F836500A7202F /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		E3BBCD7B2C199EFB00153CB4 /* Fyno TestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyno TestProj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyno_TestProjApp.swift; sourceTree = "<group>"; };
 		E3BBCD842C199EFC00153CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,20 +80,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E334A4BC2C1A518F0063CC2C /* CommonUI */ = {
+		E334A4BC2C1A518F0063CC2C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E39C19152C1F822200A7202F /* UI_Elements */,
+				E39C190E2C1F7CCE00A7202F /* Extensions */,
 				E334A4C02C1A52170063CC2C /* Map */,
 				E334A4BD2C1A51B20063CC2C /* Models */,
 			);
-			path = CommonUI;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E334A4BD2C1A51B20063CC2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E39C191A2C1F835F00A7202F /* UserDefault */,
 				E334A4BE2C1A51BB0063CC2C /* DefaultViewSize.swift */,
 				E334A4D02C1B2C350063CC2C /* UserProfile.swift */,
+				E39C19112C1F81E600A7202F /* ViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +127,7 @@
 			children = (
 				E334A4C72C1A53830063CC2C /* CountryModel.swift */,
 				E334A4CE2C1B0F590063CC2C /* CountryRow.swift */,
+				E39C19182C1F833800A7202F /* Coordinates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E334A4CC2C1A54A90063CC2C /* SelectCountryView.swift */,
+				E39C19132C1F81F200A7202F /* SelectCountryViewType.swift */,
 			);
 			path = SelectCountry;
 			sourceTree = "<group>";
@@ -124,11 +144,44 @@
 		E334A4D22C1B5DF60063CC2C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E39C190B2C1F74A800A7202F /* CountriesTable */,
 				E334A4D32C1B5E730063CC2C /* ProfileInfoCellView.swift */,
-				E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */,
 				E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E39C190B2C1F74A800A7202F /* CountriesTable */ = {
+			isa = PBXGroup;
+			children = (
+				E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */,
+				E39C190C2C1F74B000A7202F /* CountriesTableViewType.swift */,
+			);
+			path = CountriesTable;
+			sourceTree = "<group>";
+		};
+		E39C190E2C1F7CCE00A7202F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E39C190F2C1F7CD700A7202F /* Ext+View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E39C19152C1F822200A7202F /* UI_Elements */ = {
+			isa = PBXGroup;
+			children = (
+				E39C19162C1F823500A7202F /* ProgressLoadView.swift */,
+			);
+			path = UI_Elements;
+			sourceTree = "<group>";
+		};
+		E39C191A2C1F835F00A7202F /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				E39C191B2C1F836500A7202F /* UserDefault.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		E3BBCD722C199EFB00153CB4 = {
@@ -153,7 +206,7 @@
 				E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */,
 				E334A4C32C1A52C70063CC2C /* UserTravelProfile */,
 				E334A4B92C1A4F8A0063CC2C /* Resources */,
-				E334A4BC2C1A518F0063CC2C /* CommonUI */,
+				E334A4BC2C1A518F0063CC2C /* Common */,
 				E3BBCD842C199EFC00153CB4 /* Assets.xcassets */,
 				E3BBCD862C199EFC00153CB4 /* Fyno_TestProj.entitlements */,
 				E3BBCD872C199EFC00153CB4 /* Preview Content */,
@@ -246,8 +299,15 @@
 				E334A4CF2C1B0F590063CC2C /* CountryRow.swift in Sources */,
 				E334A4D12C1B2C350063CC2C /* UserProfile.swift in Sources */,
 				E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */,
+				E39C19122C1F81E600A7202F /* ViewState.swift in Sources */,
+				E39C19172C1F823500A7202F /* ProgressLoadView.swift in Sources */,
 				E334A4CD2C1A54A90063CC2C /* SelectCountryView.swift in Sources */,
+				E39C19102C1F7CD700A7202F /* Ext+View.swift in Sources */,
 				E334A4C22C1A52230063CC2C /* GlobeMapView.swift in Sources */,
+				E39C19142C1F81F200A7202F /* SelectCountryViewType.swift in Sources */,
+				E39C191C2C1F836500A7202F /* UserDefault.swift in Sources */,
+				E39C190D2C1F74B000A7202F /* CountriesTableViewType.swift in Sources */,
+				E39C19192C1F833800A7202F /* Coordinates.swift in Sources */,
 				E334A4D62C1B614D0063CC2C /* CountriesTableView.swift in Sources */,
 				E334A4D42C1B5E730063CC2C /* ProfileInfoCellView.swift in Sources */,
 				E334A4C52C1A52D90063CC2C /* UserTravelProfileView.swift in Sources */,

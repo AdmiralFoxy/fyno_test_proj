@@ -10,17 +10,15 @@ import SwiftData
 
 struct ProfileInfoCellView: View {
     
+    // MARK: Properties
+    
     @Environment(\.modelContext) var modelContext
     @Query private var userProfile: [UserProfile]
     
+    // MARK: body
+    
     var body: some View {
-        HStack(alignment: .center, spacing: 0.0) {
-            profileIcon
-            
-            profileInfo
-            Spacer()
-        }
-        .frame(height: 80)
+        content
         .padding(.horizontal, 24.0)
     }
     
@@ -29,6 +27,17 @@ struct ProfileInfoCellView: View {
 // MARK: - subviews
 
 private extension ProfileInfoCellView {
+    
+    var content: some View {
+        HStack(alignment: .center, spacing: 0.0) {
+            profileIcon
+            
+            profileInfo
+            
+            Spacer()
+        }
+        .frame(height: 80)
+    }
     
     var profileIcon: some View {
         Image(uiImage: setupProfileImage(userProfile))

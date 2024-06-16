@@ -11,20 +11,32 @@ import SwiftData
 
 struct UserTravelProfileView: View {
     
-    @Environment(\.modelContext) var modelContext
+    // MARK: Properties
     
+    @Environment(\.modelContext) var modelContext
     @State private var isExpanded: Bool = false
     
     private let mapSize: (CGFloat) = 390.0 * DefaultViewSize.hScale12iPhone
     
+    // MARK: body
+    
     var body: some View {
-        ZStack { }
+        content
             .onAppear {
                 if UserDefaultStorage.startUserWasSetup == false {
                     modelContext.insert(UserProfile.testUser)
                     UserDefaultStorage.startUserWasSetup = true
                 }
             }
+    }
+}
+
+// MARK: Subviews
+
+private extension UserTravelProfileView {
+    
+    var content: some View {
+        ZStack { }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(alignment: .top) {
                 GlobeMapView()
@@ -49,23 +61,27 @@ struct UserTravelProfileView: View {
             ProfileInfoCellView()
                 .modelContext(modelContext)
             
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center, spacing: 0.0) {
-                    UserCountriesInfoView()
-                        .modelContext(modelContext)
-                        .padding(.top, 8.0)
-                    
-                    beenCountriesView
-                    wantToBeeCountriesView
-                }
-                .padding(.bottom, 30.0)
-            }.disableBounces()
+            infoScrollView
         }
         .background {
             RoundedRectangle(cornerRadius: 20.0, style: .circular)
                 .foregroundColor(.white)
         }
         .padding(.top, mapSize - 40.0)
+    }
+    
+    var infoScrollView: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .center, spacing: 0.0) {
+                UserCountriesInfoView()
+                    .modelContext(modelContext)
+                    .padding(.top, 8.0)
+                
+                beenCountriesView
+                wantToBeeCountriesView
+            }
+            .padding(.bottom, 30.0)
+        }.disableBounces()
     }
     
     var beenCountriesView: some View {
@@ -80,7 +96,10 @@ struct UserTravelProfileView: View {
     
 }
 
+// MARK: Preview
+
 #Preview {
+    
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Schema([
@@ -93,23 +112,5 @@ struct UserTravelProfileView: View {
     } catch {
         return Text("")
     }
-}
-
-
-extension View {
-  func disableBounces() -> some View {
-    modifier(DisableBouncesModifier())
-  }
-}
-
-struct DisableBouncesModifier: ViewModifier {
-  func body(content: Content) -> some View {
-    content
-      .onAppear {
-        UIScrollView.appearance().bounces = false
-      }
-      .onDisappear {
-        UIScrollView.appearance().bounces = true
-      }
-  }
+    
 }

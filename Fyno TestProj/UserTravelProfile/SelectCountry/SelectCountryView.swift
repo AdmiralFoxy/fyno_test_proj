@@ -8,23 +8,9 @@
 import SwiftUI
 import SwiftData
 
-enum ViewState: Equatable {
-    
-    case idle
-    case loading
-    case onSuccess
-    case onError(message: String)
-    
-}
-
-enum SelectCountryViewType {
-    
-    case saveWantBe
-    case saveHaveBeen
-    
-}
-
 struct SelectCountryView: View {
+    
+    // MARK: Properties
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
@@ -46,69 +32,10 @@ struct SelectCountryView: View {
         self.viewType = viewType
     }
     
+    // MARK: body
+    
     var body: some View {
-        VStack(alignment: .center, spacing: 0.0) {
-            ZStack {}
-                .frame(height: 80.0)
-                .frame(maxWidth: .infinity)
-                .overlay(alignment: .center, content: {
-                    Text("Select \(viewType == .saveHaveBeen ? "Have Been" : "Want Be" ) Country")
-                })
-                .overlay(alignment: .trailing) {
-                    Button(action: dismiss.callAsFunction, label: {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.white)
-                            .frame(width: 24, height: 24)
-                            .background(Color.gray.opacity(0.5))
-                            .clipShape(Circle())
-                            .shadow(radius: 5)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                    })
-                }
-                .padding(.horizontal, 20.0)
-            
-            List(filteredAllCountries) { country in
-                HStack(alignment: .center, spacing: 0.0) {
-                    CountryRow(country: country)
-                    
-                    Button(action: {
-                        withAnimation {
-                            viewState = .loading
-                        }
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-                            guard let user = userProfile.first else {
-                                viewState = .onError(message: "Error user load")
-                                return
-                            }
-                            
-                            switch viewType {
-                            case .saveWantBe:
-                                user.wantBeCountriesName.insert(country.countryName)
-                            case .saveHaveBeen:
-                                user.haveBeenCountriesName.insert(country.countryName)
-                            }
-                            modelContext.insert(user)
-                            
-                            dismiss.callAsFunction()
-                        }
-                    }, label: {
-                        Image(systemName: "checkmark.circle.fill")
-                            .resizable()
-                            .frame(width: 20.0, height: 20.0)
-                            .foregroundColor(.green)
-                    })
-                }
-                .frame(height: 48.0)
-                .listSectionSeparator(.hidden, edges: [.top, .bottom])
-            }
-            .disableBounces()
-            .background(Color.clear)
-            .listStyle(PlainListStyle())
-            .scrollIndicators(.hidden)
-        }
-        .padding(.horizontal, 24.0)
-        .frame(maxWidth: .infinity)
+        content
         .overlay(alignment: .center) {
             if viewState == .loading {
                 ProgressLoadView()
@@ -117,18 +44,86 @@ struct SelectCountryView: View {
     }
 }
 
-struct ProgressLoadView: View {
+// MARK: Subviews
+
+private extension SelectCountryView {
     
-    var body: some View {
-        ZStack {
-            Color.black.opacity(0.3)
+    var content: some View {
+        VStack(alignment: .center, spacing: 0.0) {
+            headerView
             
-            ProgressView()
+            countryListView
         }
-        .ignoresSafeArea(.all)
+        .padding(.horizontal, 24.0)
+        .frame(maxWidth: .infinity)
+    }
+    
+    var headerView: some View {
+        ZStack {}
+            .frame(height: 80.0)
+            .frame(maxWidth: .infinity)
+            .overlay(alignment: .center, content: {
+                Text("Select \(viewType == .saveHaveBeen ? "Have Been" : "Want Be" ) Country")
+            })
+            .overlay(alignment: .trailing) {
+                Button(action: dismiss.callAsFunction, label: {
+                    Image(systemName: "xmark")
+                        .foregroundColor(.white)
+                        .frame(width: 24, height: 24)
+                        .background(Color.gray.opacity(0.5))
+                        .clipShape(Circle())
+                        .shadow(radius: 5)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                })
+            }
+            .padding(.horizontal, 20.0)
+    }
+    
+    var countryListView: some View {
+        List(filteredAllCountries) { country in
+            HStack(alignment: .center, spacing: 0.0) {
+                CountryRow(country: country)
+                
+                Button(action: {
+                    withAnimation {
+                        viewState = .loading
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                        guard let user = userProfile.first else {
+                            viewState = .onError(message: "Error user load")
+                            return
+                        }
+                        
+                        switch viewType {
+                        case .saveWantBe:
+                            user.wantBeCountriesName.insert(country.countryName)
+                        case .saveHaveBeen:
+                            user.haveBeenCountriesName.insert(country.countryName)
+                        }
+                        modelContext.insert(user)
+                        
+                        dismiss.callAsFunction()
+                    }
+                }, label: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .frame(width: 20.0, height: 20.0)
+                        .foregroundColor(.green)
+                })
+            }
+            .frame(height: 48.0)
+            .listSectionSeparator(.hidden, edges: [.top, .bottom])
+        }
+        .disableBounces()
+        .background(Color.clear)
+        .listStyle(PlainListStyle())
+        .scrollIndicators(.hidden)
     }
     
 }
+
+// MARK: Preview
 
 #Preview {
     do {
