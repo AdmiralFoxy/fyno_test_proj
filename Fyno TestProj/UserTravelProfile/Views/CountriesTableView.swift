@@ -42,9 +42,6 @@ struct CountriesTableView: View {
     
     let viewType: CountriesTableViewType
     
-    private let hResize = DefaultViewSize.hScale12iPhone
-    private let vResize = DefaultViewSize.vScale12iPhone
-    
     var user: UserProfile {
         userProfile.first ?? .testUser
     }
@@ -67,8 +64,8 @@ struct CountriesTableView: View {
             
             HStack {
                 Text(viewType == .haveBeen ? "I’ve been to" : "My bucket list")
-                    .font(.system(size: 17 * vResize, weight: .semibold, design: .default))
-                    .lineSpacing((24 - 17) * vResize)
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+                    .lineSpacing((24 - 17))
                     .kerning(-0.408)
                     .multilineTextAlignment(.leading)
                 
@@ -80,12 +77,12 @@ struct CountriesTableView: View {
                     HStack(alignment: .center, spacing: 0.0) {
                         Image("plus_icon")
                             .resizable()
-                            .frame(width: 32.0 * vResize, height: 32.0 * vResize, alignment: .center)
+                            .frame(width: 32.0, height: 32.0, alignment: .center)
                         
                         Button(action: { showAddCountry = true }, label: {
                             Text("Add country")
-                                .font(.system(size: 15 * vResize, weight: .semibold, design: .default))
-                                .lineSpacing((32 - 15) * vResize)
+                                .font(.system(size: 15, weight: .semibold, design: .default))
+                                .lineSpacing((32 - 15))
                                 .kerning(-0.1)
                                 .multilineTextAlignment(.trailing)
                                 .foregroundStyle(Color(red: 88 / 255, green: 86 / 255, blue: 214 / 255))
@@ -97,11 +94,11 @@ struct CountriesTableView: View {
                         RoundedRectangle(cornerRadius: 40.0)
                             .foregroundStyle(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
                     }
-                }.frame(height: 32.0 * vResize, alignment: .center)
+                }.frame(height: 32.0, alignment: .center)
                 
             }
-            .frame(height: 48.0 * vResize, alignment: .center)
-            .padding(.top, 8.0 * vResize)
+            .frame(height: 48.0, alignment: .center)
+            .padding(.top, 8.0)
             
             if filteredCountries.isEmpty {
                 VStack(alignment: .center, spacing: 20) {
@@ -130,9 +127,9 @@ struct CountriesTableView: View {
                 }
             } else {
                 List {
-                    ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : 4), id: \.self) { country in
+                    ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : filteredCountries.count > 4 ? 3 : 4), id: \.self) { country in
                         CountryRow(country: country)
-                            .frame(height: 48.0 * vResize)
+                            .frame(height: 48.0 )
                             .listRowSeparator(.hidden)
                     }
                     .onDelete(perform: deleteItems)
@@ -155,7 +152,7 @@ struct CountriesTableView: View {
                         HStack(alignment: .center, spacing: 0.0) {
                             Image("chevron-down-small")
                                 .resizable()
-                                .frame(width: 24.0 * vResize, height: 24.0 * vResize)
+                                .frame(width: 24.0, height: 24.0)
                             
                             Text("See \(filteredCountries.count > 4 ? (!isShowMore ? filteredCountries.count - countriesToShow + 1 : filteredCountries.count - countriesToShow).description : "" ) More")
                                 .font(.system(size: 17, weight: .regular, design: .default))
@@ -188,10 +185,10 @@ struct CountriesTableView: View {
                     .opacity(countriesToShow > 4 ? 1.0 : 0.0)
                     .padding(.trailing, 16.0)
                 }
-                .frame(height: filteredCountries.count <= 4 ? 0.0 : 48.0 * vResize)
+                .frame(height: filteredCountries.count <= 4 ? 0.0 : 48.0)
             }
         }
-        .frame(height: filteredCountries.count == 0 ? 256.0 * vResize : nil)
+        .frame(height: filteredCountries.count == 0 ? 256.0 : nil)
         .padding(.horizontal, 24.0)
         .sheet(isPresented: $showAddCountry, content: {
             SelectCountryView(viewType: viewType.mapToSCViewType)
@@ -200,7 +197,7 @@ struct CountriesTableView: View {
     
     private func calculateFrameHeight() -> CGFloat {
             if filteredCountries.count > 4 {
-                return CGFloat(isShowMore ? countriesToShow : countriesToShow) * 48.0
+                return CGFloat(isShowMore ? countriesToShow : countriesToShow - 1) * 48.0
             } else if filteredCountries.count == 4 {
                 return CGFloat(4) * 48.0 + 24.0
             } else {

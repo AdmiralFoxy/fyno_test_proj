@@ -19,9 +19,8 @@
 		E334A4D62C1B614D0063CC2C /* CountriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */; };
 		E334A4D82C1B8D490063CC2C /* UserCountriesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */; };
 		E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */; };
+		E39C190A2C1F5E1100A7202F /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39C19092C1F5E1100A7202F /* CustomAnnotationView.swift */; };
 		E3BBCD7F2C199EFB00153CB4 /* Fyno_TestProjApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */; };
-		E3BBCD812C199EFB00153CB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD802C199EFB00153CB4 /* ContentView.swift */; };
-		E3BBCD832C199EFB00153CB4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCD822C199EFB00153CB4 /* Item.swift */; };
 		E3BBCD852C199EFC00153CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BBCD842C199EFC00153CB4 /* Assets.xcassets */; };
 		E3BBCD892C199EFC00153CB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BBCD882C199EFC00153CB4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -39,10 +38,9 @@
 		E334A4D52C1B614D0063CC2C /* CountriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableView.swift; sourceTree = "<group>"; };
 		E334A4D72C1B8D490063CC2C /* UserCountriesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountriesInfoView.swift; sourceTree = "<group>"; };
 		E334A4D92C1B9B3D0063CC2C /* LoadCountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCountriesModel.swift; sourceTree = "<group>"; };
+		E39C19092C1F5E1100A7202F /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		E3BBCD7B2C199EFB00153CB4 /* Fyno TestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fyno TestProj.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fyno_TestProjApp.swift; sourceTree = "<group>"; };
-		E3BBCD802C199EFB00153CB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E3BBCD822C199EFB00153CB4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E3BBCD842C199EFC00153CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3BBCD862C199EFC00153CB4 /* Fyno_TestProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fyno_TestProj.entitlements; sourceTree = "<group>"; };
 		E3BBCD882C199EFC00153CB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -90,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				E334A4C12C1A52230063CC2C /* GlobeMapView.swift */,
+				E39C19092C1F5E1100A7202F /* CustomAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -152,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				E3BBCD7E2C199EFB00153CB4 /* Fyno_TestProjApp.swift */,
-				E3BBCD802C199EFB00153CB4 /* ContentView.swift */,
-				E3BBCD822C199EFB00153CB4 /* Item.swift */,
 				E334A4C32C1A52C70063CC2C /* UserTravelProfile */,
 				E334A4B92C1A4F8A0063CC2C /* Resources */,
 				E334A4BC2C1A518F0063CC2C /* CommonUI */,
@@ -244,10 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E334A4D82C1B8D490063CC2C /* UserCountriesInfoView.swift in Sources */,
+				E39C190A2C1F5E1100A7202F /* CustomAnnotationView.swift in Sources */,
 				E334A4C82C1A53830063CC2C /* CountryModel.swift in Sources */,
 				E334A4CF2C1B0F590063CC2C /* CountryRow.swift in Sources */,
-				E3BBCD812C199EFB00153CB4 /* ContentView.swift in Sources */,
-				E3BBCD832C199EFB00153CB4 /* Item.swift in Sources */,
 				E334A4D12C1B2C350063CC2C /* UserProfile.swift in Sources */,
 				E334A4DA2C1B9B3D0063CC2C /* LoadCountriesModel.swift in Sources */,
 				E334A4CD2C1A54A90063CC2C /* SelectCountryView.swift in Sources */,

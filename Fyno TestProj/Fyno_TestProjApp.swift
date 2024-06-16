@@ -10,7 +10,9 @@ import SwiftData
 
 @main
 struct Fyno_TestProjApp: App {
-    var sharedModelContainer: ModelContainer = {
+    let sharedModelContainer: ModelContainer
+    
+    init() {
         let schema = Schema([
             Country.self,
             UserProfile.self,
@@ -19,19 +21,18 @@ struct Fyno_TestProjApp: App {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            self.sharedModelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
             print("Failed to create ModelContainer: \(error)")
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }()
+        
+        LoadCountriesModel.shared.loadAndSaveCountries(context: sharedModelContainer.mainContext)
+    }
     
     var body: some Scene {
         WindowGroup {
             UserTravelProfileView()
-                .onAppear {
-                    LoadCountriesModel.shared.loadAndSaveCountries(context: sharedModelContainer.mainContext)
-                }
                 .modelContainer(sharedModelContainer)
         }
     }

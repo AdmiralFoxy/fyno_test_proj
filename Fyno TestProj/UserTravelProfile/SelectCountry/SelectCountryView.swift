@@ -46,8 +46,6 @@ struct SelectCountryView: View {
         self.viewType = viewType
     }
     
-    private let vResize = DefaultViewSize.vScale12iPhone
-    
     var body: some View {
         VStack(alignment: .center, spacing: 0.0) {
             ZStack {}
@@ -101,7 +99,7 @@ struct SelectCountryView: View {
                             .foregroundColor(.green)
                     })
                 }
-                .frame(height: 48.0 * vResize)
+                .frame(height: 48.0)
                 .listSectionSeparator(.hidden, edges: [.top, .bottom])
             }
             .disableBounces()

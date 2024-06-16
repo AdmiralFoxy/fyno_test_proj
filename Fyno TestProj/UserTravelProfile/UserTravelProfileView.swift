@@ -35,6 +35,12 @@ struct UserTravelProfileView: View {
             .overlay(alignment: .bottom) {
                 profileView
             }
+            .overlay(alignment: .topLeading, content: {
+                Image("left_button_icon")
+                    .padding(.leading, 8.0)
+                    .padding(.top, 32.0)
+                
+            })
             .ignoresSafeArea(.all, edges: .all)
     }
     

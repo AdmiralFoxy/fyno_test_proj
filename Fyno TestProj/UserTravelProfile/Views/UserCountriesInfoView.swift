@@ -13,8 +13,6 @@ struct UserCountriesInfoView: View {
     @Query private var userProfile: [UserProfile]
     @Query private var allCountries: [Country]
     
-    private let vResize = DefaultViewSize.vScale12iPhone
-    
     private var userBeenCountrCount: Int {
         userProfile.first?.haveBeenCountriesName.count ?? 0
     }
@@ -63,7 +61,7 @@ struct UserCountriesInfoView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 74.0 * vResize)
+        .frame(height: 74.0)
     }
     
     func setupPercentageView() -> some View {
