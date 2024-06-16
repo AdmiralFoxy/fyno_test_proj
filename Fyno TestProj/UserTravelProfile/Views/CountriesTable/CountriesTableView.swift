@@ -144,7 +144,7 @@ private extension CountriesTableView {
     var headerView: some View {
         HStack {
             Text(viewType == .haveBeen ? "I’ve been to" : "My bucket list")
-                .setupBaseTextMod()
+                .setupBaseTextMod(.semibold)
                 .multilineTextAlignment(.leading)
             
             Spacer()
@@ -209,9 +209,9 @@ private extension CountriesTableView {
 
 private extension View {
     
-    func setupBaseTextMod() -> some View {
+    func setupBaseTextMod(_ font: Font.Weight = .regular) -> some View {
         self
-            .font(.system(size: 17, weight: .semibold, design: .default))
+            .font(.system(size: 17, weight: font, design: .default))
             .lineSpacing(24 - 17)
             .kerning(-0.408)
     }
