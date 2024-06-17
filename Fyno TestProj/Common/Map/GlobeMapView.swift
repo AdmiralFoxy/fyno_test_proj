@@ -58,9 +58,6 @@ struct GlobeMapView: View {
         .overlay(alignment: .bottom, content: {
             Color.black.frame(height: 24.0)
         })
-        .onAppear {
-            print(allCountries.dropFirst(5).map { ($0.countryName, $0.capitalCoordinates, $0.persistentModelID) })
-        }
     }
     
 }
