@@ -30,7 +30,7 @@ struct CountriesTableView: View {
             return viewType == .haveBeen
             ? user.haveBeenCountriesName.contains($0.countryName)
             : user.wantBeCountriesName.contains($0.countryName)
-        }
+        }.sorted { $0.countryName < $1.countryName }
     }
     
     let viewType: CountriesTableViewType
@@ -78,7 +78,7 @@ private extension CountriesTableView {
     var seeMoreButton: some View {
         Button(action: {
             withAnimation {
-                countriesToShow = min(countriesToShow + 5, filteredCountries.count)
+                countriesToShow = min(countriesToShow + 4, filteredCountries.count)
                 isShowMore = true
             }
         }) {
@@ -127,7 +127,7 @@ private extension CountriesTableView {
     
     var tableViewList: some View {
         List {
-            ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : filteredCountries.count > 4 ? 3 : 4), id: \.self) { country in
+            ForEach(filteredCountries.prefix(isShowMore ? countriesToShow : filteredCountries.count > 4 ? 3 : filteredCountries.count), id: \.self) { country in
                 CountryRow(country: country)
                     .frame(height: 48.0 )
                     .listRowSeparator(.hidden)
@@ -236,20 +236,20 @@ private extension CountriesTableView {
         withAnimation {
             switch viewType {
             case .haveBeen:
-                var countriesArray = Array(user.haveBeenCountriesName)
+                var countriesArray = Array(user.haveBeenCountriesName.sorted { $0 < $1 })
                 offsets.forEach { index in
                     countriesArray.remove(at: index)
                 }
                 
-                user.haveBeenCountriesName = Set(countriesArray)
+                user.haveBeenCountriesName = countriesArray
                 
             case .wantBe:
-                var countriesArray = Array(user.wantBeCountriesName)
+                var countriesArray = Array(user.wantBeCountriesName.sorted { $0 < $1 })
                 offsets.forEach { index in
                     countriesArray.remove(at: index)
                 }
                 
-                user.wantBeCountriesName = Set(countriesArray)
+                user.wantBeCountriesName = countriesArray
             }
             
             modelContext.insert(user)

@@ -97,9 +97,9 @@ private extension SelectCountryView {
                         
                         switch viewType {
                         case .saveWantBe:
-                            user.wantBeCountriesName.insert(country.countryName)
+                            user.wantBeCountriesName.append(country.countryName)
                         case .saveHaveBeen:
-                            user.haveBeenCountriesName.insert(country.countryName)
+                            user.haveBeenCountriesName.append(country.countryName)
                         }
                         modelContext.insert(user)
                         

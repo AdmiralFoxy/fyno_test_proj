@@ -27,12 +27,15 @@ struct Fyno_TestProjApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
         
-        LoadCountriesModel.shared.loadAndSaveCountries(context: sharedModelContainer.mainContext)
+        
     }
     
     var body: some Scene {
         WindowGroup {
             UserTravelProfileView()
+                .onAppear {
+                    LoadCountriesModel.shared.loadAndSaveCountries(context: sharedModelContainer.mainContext)
+                }
                 .modelContainer(sharedModelContainer)
         }
     }

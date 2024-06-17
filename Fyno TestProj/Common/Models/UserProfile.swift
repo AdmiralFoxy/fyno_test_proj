@@ -21,10 +21,10 @@ class UserProfile: Identifiable, Hashable {
     
     var name: String
     var bioInfo: String
-    var haveBeenCountriesName: Set<String>
-    var wantBeCountriesName: Set<String>
+    var haveBeenCountriesName: [String]
+    var wantBeCountriesName: [String]
     
-    init(id: UUID = UUID(), image: Data, name: String, bioInfo: String, haveBeenCountriesName: Set<String>, wantBeCountriesName: Set<String>) {
+    init(id: UUID = UUID(), image: Data, name: String, bioInfo: String, haveBeenCountriesName: [String], wantBeCountriesName: [String]) {
         self.id = id
         self.image = image
         self.name = name
