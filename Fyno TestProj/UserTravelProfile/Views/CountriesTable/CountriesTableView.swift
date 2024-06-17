@@ -14,6 +14,8 @@ struct CountriesTableView: View {
     
     @Environment(\.modelContext) var modelContext
     
+    @Binding var viewState: ViewState
+    
     @Query private var allCountries: [Country]
     @Query private var userProfile: [UserProfile]
     
@@ -35,8 +37,9 @@ struct CountriesTableView: View {
     
     let viewType: CountriesTableViewType
     
-    init(viewType: CountriesTableViewType) {
+    init(viewState: Binding<ViewState>, viewType: CountriesTableViewType) {
         self.viewType = viewType
+        self._viewState = viewState
     }
     
     // MARK: body
@@ -233,26 +236,36 @@ private extension CountriesTableView {
     }
     
     private func deleteItems(at offsets: IndexSet) {
-        withAnimation {
-            switch viewType {
-            case .haveBeen:
-                var countriesArray = Array(user.haveBeenCountriesName.sorted { $0 < $1 })
-                offsets.forEach { index in
-                    countriesArray.remove(at: index)
-                }
-                
-                user.haveBeenCountriesName = countriesArray
-                
-            case .wantBe:
-                var countriesArray = Array(user.wantBeCountriesName.sorted { $0 < $1 })
-                offsets.forEach { index in
-                    countriesArray.remove(at: index)
-                }
-                
-                user.wantBeCountriesName = countriesArray
-            }
-            
+            viewState = .loading
+        
+//        withAnimation {
+            updateUserCountries(user: user, viewType: viewType, offsets: offsets)
             modelContext.insert(user)
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            withAnimation {
+                viewState = .onSuccess
+//            }
+        }
+    }
+    
+    func processCountriesArray(_ countriesArray: [String], offsets: IndexSet) -> [String] {
+        var sortedArray = countriesArray.sorted { $0 < $1 }
+        let indices = offsets.sorted(by: >)
+        
+        indices.forEach { index in
+            sortedArray.remove(at: index)
+        }
+        return sortedArray
+    }
+
+    func updateUserCountries(user: UserProfile, viewType: CountriesTableViewType, offsets: IndexSet) {
+        switch viewType {
+        case .haveBeen:
+            user.haveBeenCountriesName = processCountriesArray(user.haveBeenCountriesName, offsets: offsets)
+        case .wantBe:
+            user.wantBeCountriesName = processCountriesArray(user.wantBeCountriesName, offsets: offsets)
         }
     }
     
@@ -269,7 +282,7 @@ private extension CountriesTableView {
         ]), configurations: config)
         
         return VStack {
-            CountriesTableView(viewType: .haveBeen)
+            CountriesTableView(viewState: .constant(.idle), viewType: .haveBeen)
         }
         .onAppear {
         }

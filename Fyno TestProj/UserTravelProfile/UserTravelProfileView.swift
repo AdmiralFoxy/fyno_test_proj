@@ -9,12 +9,29 @@ import Combine
 import SwiftUI
 import SwiftData
 
+final class UserTravelProfileViewModel: ObservableObject {
+    
+    @Published var userCountriesTableViewState: ViewState = .idle
+    @Published private(set) var isShowLoaderForTVstate: ViewState = .idle
+    
+    private var anyCancellable = Set<AnyCancellable>()
+    
+    init() {
+        
+        $userCountriesTableViewState.sink { [weak self] state in
+            self?.isShowLoaderForTVstate = state
+        }.store(in: &anyCancellable)
+        
+    }
+    
+}
+
 struct UserTravelProfileView: View {
     
     // MARK: Properties
     
     @Environment(\.modelContext) var modelContext
-    @State private var isExpanded: Bool = false
+    @ObservedObject private var viewModel = UserTravelProfileViewModel()
     
     private let mapSize: (CGFloat) = 390.0 * DefaultViewSize.hScale12iPhone
     
@@ -54,6 +71,12 @@ private extension UserTravelProfileView {
                 
             })
             .ignoresSafeArea(.all, edges: .all)
+            .overlay(alignment: .center) {
+                if viewModel.isShowLoaderForTVstate == .loading {
+                    ProgressLoadView()
+                        .animation(.default, value: 0.35)
+                }
+            }
     }
     
     var profileView: some View {
@@ -85,12 +108,12 @@ private extension UserTravelProfileView {
     }
     
     var beenCountriesView: some View {
-        CountriesTableView(viewType: .haveBeen)
+        CountriesTableView(viewState: $viewModel.userCountriesTableViewState, viewType: .haveBeen)
             .modelContext(modelContext)
     }
     
     var wantToBeeCountriesView: some View {
-        CountriesTableView(viewType: .wantBe)
+        CountriesTableView(viewState: $viewModel.userCountriesTableViewState, viewType: .wantBe)
             .modelContext(modelContext)
     }
     
